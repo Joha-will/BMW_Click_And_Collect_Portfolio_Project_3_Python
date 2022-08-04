@@ -33,18 +33,19 @@ def create_user_name():
             user_name = input("Enter a username you would like: ")
 
             if len(user_name) < 5:
-                raise ValueError
+                raise ValueError("Username name should have 5 or more values!")
             elif not user_name[0].isupper():
-                raise ValueError
+                raise ValueError("Username must begin with a Capital letter!")
             elif not user_name.isalnum():
-                raise ValueError
+                raise ValueError("Username can only have letters and numbers!")
             else:
                 print("Username is valid! :)")
                 break
 
-        except ValueError:
-            print("Please enter valid username.")
+        except ValueError as e:
+            print(f"Invalid username: {e}, please try again!")
             continue
+    
 
 
 initial_val()
