@@ -4,7 +4,6 @@ import random
 print("Hello and welcome to this game! \n")
 
 
-
 def initial_val():
     """
     This is the initial validation so the user
@@ -39,14 +38,32 @@ def create_user_name():
             elif not user_name.isalnum():
                 raise ValueError("Username can only have letters and numbers!")
             else:
-                print("Username is valid! :)")
+                print("Username is valid! :)\n")
+                print("Now loading...\n")
+                print(f"Hello {user_name} and welcome :)")
                 break
 
         except ValueError as e:
             print(f"Invalid username: {e}, please try again!")
             continue
-    
+
+
+class Choice_of_Car:
+    """
+    """
+    def __init__(self, make, model, colour, fueltype):
+        self.make = make
+        self.model = model
+        self.colour = colour
+        self.fueltype = fueltype
+
+    def description()
 
 
 initial_val()
 create_user_name()
+#what_car()
+ake_cus = input("What is the make of the car ")
+
+cus_tum = Choice_of_Car(ake_cus, 1, 1, 2) 
+print(cus_tum.make)
