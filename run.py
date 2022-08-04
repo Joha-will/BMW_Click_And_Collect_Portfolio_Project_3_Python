@@ -1,7 +1,21 @@
+import gspread
+from google.oauth2.service_account import Credentials
 import random
 
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
 
-print("Hello and welcome to this game! \n")
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('Bmw_Car_Orders')
+
+collections = SHEET.worksheet('Collections')
+data = collections.get_all_values()
+print(data)
 
 
 def initial_val():
@@ -57,7 +71,7 @@ class Choice_of_Car:
         self.colour = colour
         self.fueltype = fueltype
 
-    def description()
+    """def description()"""
 
 
 initial_val()
