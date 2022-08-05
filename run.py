@@ -21,6 +21,11 @@ list_of_questions = [
     "What cars are available in stores today",
     "Can you show me the list of cars in stores today"
 ]
+bmw_list = [
+    {'Make': 'BMW', 'Model': '1 Series', 'Colour': 'Red', 'FuelType': 'Disel'},
+    {'Make': 'BMW', 'Model': 'M50', 'Colour': 'Blue', 'FuelType': 'Disel'},
+    {'Make': 'BMW', 'Model': 'M2 Comp', 'Colour': 'Grey', 'FuelType': 'Petrol'}
+    ]
 
 
 def initial_val():
@@ -72,7 +77,7 @@ def show_bmw():
     """
     Prompts the user to user a question.
     """
-    print("Questions you can ask. \n")
+    print("\nQuestions you can ask. \n")
     print("(*). Can I see the BMW's in stores today \n")
     print("(*). What cars are available in stores today \n")
     print("(*). Can you show me the list of cars in stores today \n")
@@ -80,7 +85,10 @@ def show_bmw():
         try:
             user_question = str(input("Ask a question! :)"))
             if user_question in list_of_questions:
-                print("Here are the cars we have available in stores today.")
+                print("Here are the cars we have available in stores today.\n")
+                for car in bmw_list:
+                    print(f"{car} \n")
+                break
                 
             else:
                 print("this is not it")
