@@ -1,5 +1,7 @@
 import gspread
+
 from google.oauth2.service_account import Credentials
+
 import random
 
 SCOPE = [
@@ -14,6 +16,11 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Bmw_Car_Orders')
 
 city = []
+list_of_questions = [
+    "Can I see the BMW's in stores today",
+    "What cars are available in stores today",
+    "Can you show me the list of cars in stores today"
+]
 
 
 def initial_val():
@@ -65,22 +72,31 @@ def show_bmw():
     """
     Prompts the user to user a question.
     """
-    list_of_question = ["Can I see the BMW's in stores today", "What cars are available in stores today", "Can you show me the list of cars in stores today"]
     print("Questions you can ask. \n")
     print("(*). Can I see the BMW's in stores today \n")
     print("(*). What cars are available in stores today \n")
     print("(*). Can you show me the list of cars in stores today \n")
     while True:
         try:
-            user_question = input("Ask a question! :)")
+            user_question = str(input("Ask a question! :)"))
+            if user_question in list_of_questions:
+                print("Here are the cars we have available in stores today.")
+                
+            else:
+                print("this is not it")
+                raise ValueError("This is not it")
+        except ValueError as e:
+            print(f"This is not it {e}")
+            continue
 
-            for question in list_of_question:
-                if user_question != num:
-                    print("Try asking one of the questions above!")
-                    continue
-                else:
-                    break
+
+def all_functions():
+    """
+    This function runs all the other functions
+    """
+    initial_val()
+    create_user_name()
+    show_bmw()
 
 
-
-
+all_functions()
