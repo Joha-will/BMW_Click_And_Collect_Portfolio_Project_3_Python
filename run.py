@@ -6,16 +6,14 @@ SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
+]
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Bmw_Car_Orders')
 
-collections = SHEET.worksheet('Collections')
-data = collections.get_all_values()
-print(data)
+city = []
 
 
 def initial_val():
@@ -24,15 +22,15 @@ def initial_val():
     can input y or n to start the game.
     """
     print("Enter 'y' if Yes and 'n' if No.")
-    initial_question = input("Would you like to try this game? ").lower()
+    initial_question = input("Would you like to place an order? ").lower()
 
     if initial_question == 'y':
         print("Game loading... \n")
     elif initial_question == 'n':
-        print("GoodBye for now :)")
-        quit()
+        print("GoodBye for now :) \n")
+
     else:
-        print("Invalid data entered, please enter 'y' if Yes or 'n' if No")
+        print("Invalid data entered, please try again! \n")
         return initial_val()
 
 
@@ -54,7 +52,8 @@ def create_user_name():
             else:
                 print("Username is valid! :)\n")
                 print("Now loading...\n")
-                print(f"Hello {user_name} and welcome :)")
+                print(
+                    f"Hello {user_name} and welcome to BMW click and collect.")
                 break
 
         except ValueError as e:
@@ -62,22 +61,26 @@ def create_user_name():
             continue
 
 
-class Choice_of_Car:
+def show_bmw():
     """
+    Prompts the user to user a question.
     """
-    def __init__(self, make, model, colour, fueltype):
-        self.make = make
-        self.model = model
-        self.colour = colour
-        self.fueltype = fueltype
+    list_of_question = ["Can I see the BMW's in stores today", "What cars are available in stores today", "Can you show me the list of cars in stores today"]
+    print("Questions you can ask. \n")
+    print("(*). Can I see the BMW's in stores today \n")
+    print("(*). What cars are available in stores today \n")
+    print("(*). Can you show me the list of cars in stores today \n")
+    while True:
+        try:
+            user_question = input("Ask a question! :)")
 
-    """def description()"""
+            for question in list_of_question:
+                if user_question != num:
+                    print("Try asking one of the questions above!")
+                    continue
+                else:
+                    break
 
 
-initial_val()
-create_user_name()
-#what_car()
-ake_cus = input("What is the make of the car ")
 
-cus_tum = Choice_of_Car(ake_cus, 1, 1, 2) 
-print(cus_tum.make)
+
