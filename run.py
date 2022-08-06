@@ -27,6 +27,10 @@ bmw_list = [
     {'Make': 'BMW', 'Model': 'M2 Comp', 'Colour': 'Grey', 'FuelType': 'Petrol'}
     ]
 
+bmw_one = bmw_list[0]
+bmw_two = bmw_list[1]
+bmw_three = bmw_list[2]
+
 
 def initial_val():
     """
@@ -37,7 +41,7 @@ def initial_val():
     initial_question = input("Would you like to place an order? ").lower()
 
     if initial_question == 'y':
-        print("Game loading... \n")
+        print("Please wait loading ...\n")
     elif initial_question == 'n':
         print("GoodBye for now :) \n")
 
@@ -104,51 +108,25 @@ def choice_of_car():
     and ask them to input 1,2 or 3 based on the list of
     cars shown.
     """
-    bmw_one = bmw_list[0]
-    bmw_two = bmw_list[1]
-    bmw_three = bmw_list[2]
-
     print("To choose one of the car from the list. Type 1,2 or 3! \n")
-    
-    pick_car = input("Which one of the car are you interested in? ")
+    while True:
+        try:
+            pick_car = int(input("Which car are you interested in? "))
+            if pick_car == 1:
+                print(f"bmw_one \n")
 
-    if pick_car.isdigit() == 1:
-        print(f"{bmw_one} \n")
-    print("Enter 'y' if Yes and 'n' if No.")
-    confirm_choice = input("Is this the car your interested in? ").islower()
+            elif pick_car == 2:
+                print(f"bmw_two \n")
+
+            elif pick_car == 3:
+                print(f"bmw_three \n")
+
+            else:
+                raise ValueError("To choose one of the car from the list. Type 1,2 or 3! \n")
             
-    if confirm_choice == 'y':
-        print("Great choice! \n")
-        make_order = input("Would you like to place an order? ")
-                
-        if make_order.lower() == 'y':
-            print('Preparing your order for collection :) \n')
-            print('Order successful !')
-        elif make_order.lower() == 'n':
-            print('Not a problem')
-            return pick_car
-        else:
-            print("Invalid data enter, please try again! \n")
-            print("Enter 'y' if Yes and 'n' if No.")
-            
-    elif pick_car.isdigit() == '2':
-        print("Not a problem")
-        for car in bmw_list:
-            print(f"{car} \n")
-            return pick_car
-            
-    else:
-        print("Invalid data enter, please try again! \n")
-        print("Enter 'y' if Yes and 'n' if No.")
-            
-
-
-                    
-
-
-
-
-
+        except ValueError as e:
+            print(f"Invalid data entered: {e}")
+            continue         
 
 
 def all_functions():
@@ -159,5 +137,6 @@ def all_functions():
     create_user_name()
     show_bmw()
     choice_of_car()
+
 
 all_functions()
