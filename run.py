@@ -102,6 +102,22 @@ def show_bmw():
             continue
 
 
+def confirm_car_one():
+    print("Enter 'y' if Yes and 'n' if No.")
+    while True:
+        confirm_choice = str(input("Is this the car you want? ")).lower()
+        if confirm_choice == 'y':
+            print("Great Choice!")
+        elif confirm_choice == 'n':
+            print('Not a problem \n')
+            for car in bmw_list:
+                print(f"{car} \n")
+            return choice_of_car()
+        else:
+            print("Invalid data! \n")
+            continue
+                
+                    
 def choice_of_car():
     """
     This function ask the user for their choice of car
@@ -113,13 +129,14 @@ def choice_of_car():
         try:
             pick_car = int(input("Which car are you interested in? "))
             if pick_car == 1:
-                print(f"bmw_one \n")
+                print(f"{bmw_one} \n")
+                return confirm_car_one()
 
             elif pick_car == 2:
-                print(f"bmw_two \n")
+                print(f"{bmw_two} \n")
 
             elif pick_car == 3:
-                print(f"bmw_three \n")
+                print(f"{bmw_three} \n")
 
             else:
                 raise ValueError("To choose one of the car from the list. Type 1,2 or 3! \n")
