@@ -98,6 +98,27 @@ def show_bmw():
             continue
 
 
+def choice_of_car():
+    """
+    This function ask the user for their choice of car
+    and ask them to input 1,2 or 3 based on the list of
+    cars shown.
+    """
+    bmw_one = bmw_list[0]
+    bmw_two = bmw_list[1]
+    bmw_three = bmw_list[2]
+
+    print("To choose one of the car from the list. Type 1,2 or 3! \n")
+    while True:
+        pick_car = input("Which one of the car are you interested in? ")
+
+        if pick_car.isdigit() == 1:
+            print()
+
+
+
+
+
 def all_functions():
     """
     This function runs all the other functions
@@ -105,6 +126,6 @@ def all_functions():
     initial_val()
     create_user_name()
     show_bmw()
-
+    choice_of_car()
 
 all_functions()
