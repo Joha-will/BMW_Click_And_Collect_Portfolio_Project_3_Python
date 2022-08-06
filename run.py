@@ -83,7 +83,7 @@ def show_bmw():
     print("(*). Can you show me the list of cars in stores today \n")
     while True:
         try:
-            user_question = str(input("Ask a question! :)"))
+            user_question = str(input("Ask a question! "))
             if user_question in list_of_questions:
                 print("Here are the cars we have available in stores today.\n")
                 for car in bmw_list:
@@ -109,11 +109,43 @@ def choice_of_car():
     bmw_three = bmw_list[2]
 
     print("To choose one of the car from the list. Type 1,2 or 3! \n")
-    while True:
-        pick_car = input("Which one of the car are you interested in? ")
+    
+    pick_car = input("Which one of the car are you interested in? ")
 
-        if pick_car.isdigit() == 1:
-            print()
+    if pick_car.isdigit() == 1:
+        print(f"{bmw_one} \n")
+    print("Enter 'y' if Yes and 'n' if No.")
+    confirm_choice = input("Is this the car your interested in? ").islower()
+            
+    if confirm_choice == 'y':
+        print("Great choice! \n")
+        make_order = input("Would you like to place an order? ")
+                
+        if make_order.lower() == 'y':
+            print('Preparing your order for collection :) \n')
+            print('Order successful !')
+        elif make_order.lower() == 'n':
+            print('Not a problem')
+            return pick_car
+        else:
+            print("Invalid data enter, please try again! \n")
+            print("Enter 'y' if Yes and 'n' if No.")
+            
+    elif pick_car.isdigit() == '2':
+        print("Not a problem")
+        for car in bmw_list:
+            print(f"{car} \n")
+            return pick_car
+            
+    else:
+        print("Invalid data enter, please try again! \n")
+        print("Enter 'y' if Yes and 'n' if No.")
+            
+
+
+                    
+
+
 
 
 
