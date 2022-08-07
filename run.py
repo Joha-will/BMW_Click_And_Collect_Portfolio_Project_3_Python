@@ -133,26 +133,46 @@ def choice_of_car():
 
 
 def confirm_car_choice():
-    while True:
-        print("Enter 'y' if Yes and 'n' if No.")
-        confirm_choice = str(input("Is this the car you want? ")).lower()
-        validate_car_choice(confirm_choice)
+
+    print("Enter 'y' if Yes and 'n' if No.")
+    confirm_choice = str(input("Is this the car you want? ")).lower()
+    validate_car_choice(confirm_choice)
 
 
 def validate_car_choice(data1):
-    if data1 == 'y':
-        print("Great Choice! \n")
+    while True:
+
+        if data1 == 'y':
+            print("Great Choice! \n")
+            break
             
-    elif data1 == 'n':
-        print('Not a problem \n')
-        for car in bmw_list:
-            print(f"{car} \n")
-        choice_of_car()
+        elif data1 == 'n':
+            print('Not a problem \n')
+            for car in bmw_list:
+                print(f"{car} \n")
+            choice_of_car()
+        else:
+            print("Invalid data! \n")
+            confirm_car_choice()
+
+
+def show_features():
+    print("Enter 'y' if Yes and 'n' if No.")
+    car_features = str(input("Would you like to read more about this car? "))
+    validate_show_features(car_features)
+
+
+def validate_show_features(data2):
+
+    if data2 == 'y':
+        print("Here is a brief description.")
+    
+    elif data2 == 'n':
+        print("Not a problem")
+    
     else:
-        print("Invalid data! \n")
-        confirm_car_choice()
-
-
+        print('Invalid data entered')
+        show_features()
 
 
 
@@ -167,6 +187,7 @@ def all_functions():
     create_user_name()
     show_bmw()
     choice_of_car()
+    show_features()
 
 
 all_functions()
