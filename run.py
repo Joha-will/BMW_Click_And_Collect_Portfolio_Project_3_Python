@@ -101,49 +101,62 @@ def show_bmw():
             print(f"This is not it {e}")
             continue
 
-
-def confirm_car_one():
-    print("Enter 'y' if Yes and 'n' if No.")
-    while True:
-        confirm_choice = str(input("Is this the car you want? ")).lower()
-        if confirm_choice == 'y':
-            print("Great Choice!")
-        elif confirm_choice == 'n':
-            print('Not a problem \n')
-            for car in bmw_list:
-                print(f"{car} \n")
-            return choice_of_car()
-        else:
-            print("Invalid data! \n")
-            continue
-                
-                    
+               
 def choice_of_car():
     """
     This function ask the user for their choice of car
     and ask them to input 1,2 or 3 based on the list of
     cars shown.
     """
-    print("To choose one of the car from the list. Type 1,2 or 3! \n")
     while True:
         try:
+            print("To choose one of the car from the list. Type 1,2 or 3! \n")
             pick_car = int(input("Which car are you interested in? "))
+
             if pick_car == 1:
                 print(f"{bmw_one} \n")
-                return confirm_car_one()
+                return confirm_car_choice()
 
             elif pick_car == 2:
                 print(f"{bmw_two} \n")
+                return confirm_car_choice()
 
             elif pick_car == 3:
                 print(f"{bmw_three} \n")
+                return confirm_car_choice()
 
             else:
-                raise ValueError("To choose one of the car from the list. Type 1,2 or 3! \n")
-            
+                raise ValueError("To choose one of the car from the list. Type 1, 2 or 3! \n")
         except ValueError as e:
             print(f"Invalid data entered: {e}")
-            continue         
+            continue
+
+
+def confirm_car_choice():
+    while True:
+        print("Enter 'y' if Yes and 'n' if No.")
+        confirm_choice = str(input("Is this the car you want? ")).lower()
+        validate_car_choice(confirm_choice)
+
+
+def validate_car_choice(data1):
+    if data1 == 'y':
+        print("Great Choice! \n")
+            
+    elif data1 == 'n':
+        print('Not a problem \n')
+        for car in bmw_list:
+            print(f"{car} \n")
+        choice_of_car()
+    else:
+        print("Invalid data! \n")
+        confirm_car_choice()
+
+
+
+
+
+
 
 
 def all_functions():
