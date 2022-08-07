@@ -31,6 +31,8 @@ bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
 bmw_three = bmw_list[2]
 
+final_choice = []
+
 
 def initial_val():
     """
@@ -115,14 +117,20 @@ def choice_of_car():
 
             if pick_car == 1:
                 print(f"{bmw_one} \n")
+                final_choice.append(bmw_one)
+                print(final_choice)
                 return confirm_car_choice()
 
             elif pick_car == 2:
                 print(f"{bmw_two} \n")
+                final_choice.append(bmw_two)
+                print(final_choice)
                 return confirm_car_choice()
 
             elif pick_car == 3:
                 print(f"{bmw_three} \n")
+                final_choice.append(bmw_three)
+                print(final_choice)
                 return confirm_car_choice()
 
             else:
@@ -148,6 +156,7 @@ def validate_car_choice(data1):
             
         elif data1 == 'n':
             print('Not a problem \n')
+            final_choice.clear()
             for car in bmw_list:
                 print(f"{car} \n")
             choice_of_car()
@@ -163,20 +172,18 @@ def show_features():
 
 
 def validate_show_features(data2):
+    while True:
 
-    if data2 == 'y':
-        print("Here is a brief description.")
+        if data2 == 'y':
+            print()
+            break
     
-    elif data2 == 'n':
-        print("Not a problem")
+        elif data2 == 'n':
+            print("Not a problem")
     
-    else:
-        print('Invalid data entered')
-        show_features()
-
-
-
-
+        else:
+            print('Invalid data entered')
+            show_features()
 
 
 def all_functions():
