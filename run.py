@@ -17,9 +17,9 @@ SHEET = GSPREAD_CLIENT.open('Bmw_Car_Orders')
 
 city = []
 list_of_questions = [
-    "Can I see the BMW's in stores today",
-    "What cars are available in stores today",
-    "Can you show me the list of cars in stores today"
+    "Can I see the BMW's in stores today?",
+    "What cars are available in stores today?",
+    "Can you show me the list of cars in stores today?"
 ]
 bmw_list = [
     {'Make': 'BMW', 'Model': '1 Series', 'Colour': 'Red', 'FuelType': 'Disel'},
@@ -37,19 +37,22 @@ final_choice = []
 def initial_val():
     """
     This is the initial validation so the user
-    can input y or n to start the game.
+    can input y or n to start.
     """
     print("Enter 'y' if Yes and 'n' if No.")
     initial_question = input("Would you like to place an order? ").lower()
+    while True:
 
-    if initial_question == 'y':
-        print("Please wait loading ...\n")
-    elif initial_question == 'n':
-        print("GoodBye for now :) \n")
+        if initial_question == 'y':
+            print("Please wait loading ... \n")
+            break
+        elif initial_question == 'n':
+            print("GoodBye for now :) \n")
+            continue
 
-    else:
-        print("Invalid data entered, please try again! \n")
-        return initial_val()
+        else:
+            print("Invalid data entered, please try again! \n")
+            return initial_val()
 
 
 def create_user_name():
@@ -57,6 +60,9 @@ def create_user_name():
     This function would ask the user to enter a username
     5 characters long.
     """
+    print("Username should begin with a capital letter. \n")
+    print("Username should be 5 or more characters. \n")
+    print("Username should only have letters and numbers. \n")
     while True:
         try:
             user_name = input("Enter a username you would like: ")
@@ -68,8 +74,8 @@ def create_user_name():
             elif not user_name.isalnum():
                 raise ValueError("Username can only have letters and numbers!")
             else:
-                print("Username is valid! :)\n")
-                print("Now loading...\n")
+                print("Username is valid! :) \n")
+                print("Now loading... \n")
                 print(
                     f"Hello {user_name} and welcome to BMW click and collect.")
                 break
@@ -83,7 +89,7 @@ def show_bmw():
     """
     Prompts the user to user a question.
     """
-    print("\nQuestions you can ask. \n")
+    print("Questions you can ask. \n")
     print("(*). Can I see the BMW's in stores today \n")
     print("(*). What cars are available in stores today \n")
     print("(*). Can you show me the list of cars in stores today \n")
