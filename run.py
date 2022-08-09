@@ -17,7 +17,7 @@ SHEET = GSPREAD_CLIENT.open('Bmw_Car_Orders')
 
 city = []
 list_of_questions = [
-    "Can I see the BMWs in stores today?",
+    "Can I see the cars in stores today?",
     "What cars are available in stores today?",
     "Can you show me the list of cars in stores today?"
 ]
@@ -84,7 +84,7 @@ def create_user_name():
                 print("Username is valid! :) \n")
                 print("Now loading... \n")
                 print(
-                    f"Hello {user_name} and welcome to BMW click and collect.")
+                    f"Hello {user_name} and welcome to BMW click and collect. \n")
                 break
 
         except ValueError as e:
@@ -97,6 +97,8 @@ def show_bmw():
     Prompts the user to user a question.
     """
     print("Questions you can ask. \n")
+    print("Each sentence must begin with a capital letter!")
+    print("Each sentence must end with question mark! \n")
     print("Please ask the question beginning with a capital letter.")
     print("(*). Can I see the BMWs in stores today? \n")
     print("(*). What cars are available in stores today? \n")
@@ -105,15 +107,14 @@ def show_bmw():
     while True:
         try:
             user_question = str(input("Ask a question! "))
-            if user_question.lower() == 'q':
-                print("GoodBye for now :) \n")
-                return all_functions()
-                
-            elif user_question in list_of_questions:
+            if user_question in list_of_questions:
                 print("Here are the cars we have available in stores today.\n")
                 for car in bmw_list:
                     print(f"{car} \n")
                 break
+            elif user_question.lower() == 'q':
+                print("GoodBye for now :) \n")
+                return all_functions()
                 
             else:
                 print("this is not it")
@@ -151,6 +152,9 @@ def choice_of_car():
                 final_choice.append(bmw_three)
                 print(final_choice)
                 return confirm_car_choice()
+            elif pick_car == 4:
+                print("GoodBye for now :) \n")
+                return all_functions()
 
             else:
                 raise ValueError("To choose one of the car from the list. Type 1, 2 or 3! \n")
