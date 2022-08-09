@@ -17,7 +17,7 @@ SHEET = GSPREAD_CLIENT.open('Bmw_Car_Orders')
 
 city = []
 list_of_questions = [
-    "Can I see the BMW's in stores today?",
+    "Can I see the BMWs in stores today?",
     "What cars are available in stores today?",
     "Can you show me the list of cars in stores today?"
 ]
@@ -60,19 +60,25 @@ def create_user_name():
     This function would ask the user to enter a username
     5 characters long.
     """
-    print("Username should begin with a capital letter. \n")
-    print("Username should be 5 or more characters. \n")
+    print("Enter Q to quit/exit. \n")
+    print("Username should begin with a capital letter.")
+    print("Username should be 5 or more characters.")
     print("Username should only have letters and numbers. \n")
+    
     while True:
         try:
             user_name = input("Enter a username you would like: ")
-
-            if len(user_name) < 5:
+            
+            if user_name.lower() == 'q':
+                print("GoodBye for now :) \n")
+                return all_functions()
+            elif len(user_name) < 5:
                 raise ValueError("Username name should have 5 or more values!")
             elif not user_name[0].isupper():
                 raise ValueError("Username must begin with a Capital letter!")
             elif not user_name.isalnum():
                 raise ValueError("Username can only have letters and numbers!")
+            
             else:
                 print("Username is valid! :) \n")
                 print("Now loading... \n")
@@ -90,9 +96,10 @@ def show_bmw():
     Prompts the user to user a question.
     """
     print("Questions you can ask. \n")
-    print("(*). Can I see the BMW's in stores today \n")
-    print("(*). What cars are available in stores today \n")
-    print("(*). Can you show me the list of cars in stores today \n")
+    print("Please ask the question beginning with a capital letter. \n")
+    print("(*). Can I see the BMWs in stores today? \n")
+    print("(*). What cars are available in stores today? \n")
+    print("(*). Can you show me the list of cars in stores today? \n")
     while True:
         try:
             user_question = str(input("Ask a question! "))
