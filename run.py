@@ -25,7 +25,9 @@ bmw_list = [
     {'Make': 'BMW', 'Model': '1 Series', 'Colour': 'Red', 'FuelType': 'Disel'},
     {'Make': 'BMW', 'Model': 'M50', 'Colour': 'Blue', 'FuelType': 'Disel'},
     {'Make': 'BMW', 'Model': 'M2 Comp', 'Colour': 'Grey', 'FuelType': 'Petrol'}
-    ]
+]
+
+descriptions = "is high quality with great endurance."
 
 bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
@@ -97,7 +99,7 @@ def show_bmw():
     Prompts the user to user a question.
     """
     print("Questions you can ask. \n")
-    print("Each sentence must begin with a capital letter!")
+    print("Each sentence must begin with a capital letter! \n")
     print("Each sentence must end with question mark! \n")
     print("Please ask the question beginning with a capital letter.")
     print("(*). Can I see the cars in stores today? \n")
@@ -207,7 +209,8 @@ def validate_show_features(data2):
     while True:
 
         if data2 == 'y':
-            print()
+            if final_choice[0] == bmw_one or bmw_two or bmw_three:
+                print(f"This {final_choice[0]['Model']} {descriptions}")
             break
     
         elif data2 == 'n':
