@@ -60,10 +60,11 @@ def create_user_name():
     This function would ask the user to enter a username
     5 characters long.
     """
-    print("Enter Q to quit/exit. \n")
+    
     print("Username should begin with a capital letter.")
     print("Username should be 5 or more characters.")
     print("Username should only have letters and numbers. \n")
+    print("You can always enter Q to quit/exit this process if needed. \n")
     
     while True:
         try:
@@ -96,14 +97,19 @@ def show_bmw():
     Prompts the user to user a question.
     """
     print("Questions you can ask. \n")
-    print("Please ask the question beginning with a capital letter. \n")
+    print("Please ask the question beginning with a capital letter.")
     print("(*). Can I see the BMWs in stores today? \n")
     print("(*). What cars are available in stores today? \n")
     print("(*). Can you show me the list of cars in stores today? \n")
+    print("You can always enter Q to quit/exit this process if needed. \n")
     while True:
         try:
             user_question = str(input("Ask a question! "))
-            if user_question in list_of_questions:
+            if user_question.lower() == 'q':
+                print("GoodBye for now :) \n")
+                return all_functions()
+                
+            elif user_question in list_of_questions:
                 print("Here are the cars we have available in stores today.\n")
                 for car in bmw_list:
                     print(f"{car} \n")
