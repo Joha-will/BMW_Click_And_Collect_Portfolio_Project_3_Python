@@ -153,6 +153,7 @@ def choice_of_car():
                 final_choice.append(bmw_three)
                 print(final_choice)
                 return confirm_car_choice()
+
             elif pick_car == 4:
                 final_choice.clear()
                 print("GoodBye for now :) \n")
@@ -167,7 +168,7 @@ def choice_of_car():
 
 def confirm_car_choice():
 
-    print("Enter 'y' if Yes and 'n' if No.")
+    print("\n Enter 'y' if Yes and 'n' if No.")
     print("You can always enter Q to quit/exit this process if needed. \n")
     confirm_choice = str(input("Is this the car you want? ")).lower()
     validate_car_choice(confirm_choice)
@@ -198,7 +199,7 @@ def validate_car_choice(data1):
 
 def show_features():
     print("Enter 'y' if Yes and 'n' if No.")
-    car_features = str(input("Would you like to read more about this car? "))
+    car_features = str(input("Would you like to read more about this car? ")).lower()
     validate_show_features(car_features)
 
 
@@ -211,6 +212,12 @@ def validate_show_features(data2):
     
         elif data2 == 'n':
             print("Not a problem")
+            break
+
+        elif data2 == 'q':
+            print("GoodBye for now :) \n")
+            final_choice.clear()
+            return all_functions()    
 
         else:
             print('Invalid data entered')
