@@ -100,7 +100,7 @@ def show_bmw():
     print("Each sentence must begin with a capital letter!")
     print("Each sentence must end with question mark! \n")
     print("Please ask the question beginning with a capital letter.")
-    print("(*). Can I see the BMWs in stores today? \n")
+    print("(*). Can I see the cars in stores today? \n")
     print("(*). What cars are available in stores today? \n")
     print("(*). Can you show me the list of cars in stores today? \n")
     print("You can always enter Q to quit/exit this process if needed. \n")
@@ -133,6 +133,7 @@ def choice_of_car():
     while True:
         try:
             print("To choose one of the car from the list. Type 1,2 or 3! \n")
+            print("Or can enter 4 to quit/exit this process if needed. \n")
             pick_car = int(input("Which car are you interested in? "))
 
             if pick_car == 1:
@@ -153,6 +154,7 @@ def choice_of_car():
                 print(final_choice)
                 return confirm_car_choice()
             elif pick_car == 4:
+                final_choice.clear()
                 print("GoodBye for now :) \n")
                 return all_functions()
 
@@ -166,6 +168,7 @@ def choice_of_car():
 def confirm_car_choice():
 
     print("Enter 'y' if Yes and 'n' if No.")
+    print("You can always enter Q to quit/exit this process if needed. \n")
     confirm_choice = str(input("Is this the car you want? ")).lower()
     validate_car_choice(confirm_choice)
 
@@ -183,6 +186,11 @@ def validate_car_choice(data1):
             for car in bmw_list:
                 print(f"{car} \n")
             choice_of_car()
+
+        elif data1 == 'q':
+            print("GoodBye for now :) \n")
+            final_choice.clear()
+            return all_functions()
         else:
             print("Invalid data! \n")
             confirm_car_choice()
@@ -203,7 +211,7 @@ def validate_show_features(data2):
     
         elif data2 == 'n':
             print("Not a problem")
-    
+
         else:
             print('Invalid data entered')
             show_features()
