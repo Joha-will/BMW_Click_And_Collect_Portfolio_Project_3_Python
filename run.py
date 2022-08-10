@@ -98,7 +98,7 @@ def show_bmw():
     """
     Prompts the user to user a question.
     """
-    print("Questions you can ask. \n")
+    print("Questions you can ask can be found below with (*) marked. \n")
     print("Each sentence must begin with a capital letter! \n")
     print("Each sentence must end with question mark! \n")
     print("Please ask the question beginning with a capital letter.")
@@ -210,11 +210,11 @@ def validate_show_features(data2):
 
         if data2 == 'y':
             if final_choice[0] == bmw_one or bmw_two or bmw_three:
-                print(f"This {final_choice[0]['Model']} {descriptions}")
+                print(f"\nThis {final_choice[0]['Model']} {descriptions}")
             break
     
         elif data2 == 'n':
-            print("Not a problem")
+            print("Not a problem \n")
             break
 
         elif data2 == 'q':
@@ -235,15 +235,35 @@ def make_order():
     """
     print("Enter 'y' if Yes and 'n' if No.")
     place_order = str(input("Would you like to place an order? ")).upper()
-    
+    validate_order(place_order)
 
-def validate_order():
+
+def validate_order(data3):
     """
     This function validates the data that is
     provided to the make order function. And 
     makes a decision after.
-
     """
+    while True:
+        if data3 == 'Y':
+            print("Of course! \n")
+            print("Your order is being prepared for collection ...")
+            break
+        
+        elif data3 == 'N':
+            print('Not a problem')
+            break
+
+        elif data3 == 'Q':
+            print("GoodBye for now :) \n")
+            final_choice.clear()
+            return all_functions()
+        
+        else:
+            print("Invalid data entered, please try again.")
+            return make_order()
+
+
 
 
 
@@ -257,6 +277,7 @@ def all_functions():
     show_bmw()
     choice_of_car()
     show_features()
+    make_order()
 
 
 all_functions()
