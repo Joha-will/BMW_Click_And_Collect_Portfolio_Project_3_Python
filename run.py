@@ -227,6 +227,27 @@ def validate_show_features(data2):
             show_features()
 
 
+def make_order():
+    """
+    This function asks users if they want
+    to place an order on the car they have 
+    choosen.
+    """
+    print("Enter 'y' if Yes and 'n' if No.")
+    place_order = str(input("Would you like to place an order? ")).upper()
+    
+
+def validate_order():
+    """
+    This function validates the data that is
+    provided to the make order function. And 
+    makes a decision after.
+
+    """
+
+
+
+
 def all_functions():
     """
     This function runs all the other functions
