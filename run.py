@@ -264,9 +264,20 @@ def validate_order(data3):
             return make_order()
 
 
+def reference_num():
+    """
+    This function generates a random 7 digit
+    number when called.
+    """
+    ref_num = []
+    while True:
+        if len(ref_num) < 8:
+            ref_num.append(random.randrange(0, 10))
 
-
-
+        else:
+            print(ref_num)
+            break
+    
 
 def all_functions():
     """
@@ -278,6 +289,7 @@ def all_functions():
     choice_of_car()
     show_features()
     make_order()
+    reference_num()
 
 
 all_functions()
