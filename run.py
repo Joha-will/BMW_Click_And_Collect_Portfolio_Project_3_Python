@@ -33,7 +33,8 @@ bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
 bmw_three = bmw_list[2]
 
-final_choice = []
+
+final_order = []
 
 
 def initial_val():
@@ -85,6 +86,9 @@ def create_user_name():
             else:
                 print("Username is valid! :) \n")
                 print("Now loading... \n")
+                final_order.append(user_name)
+                print(final_choice)
+
                 print(
                     f"Hello {user_name} and welcome to BMW click and collect. \n")
                 break
@@ -92,6 +96,15 @@ def create_user_name():
         except ValueError as e:
             print(f"Invalid username: {e}, please try again!")
             continue
+
+
+def user_location():
+    """
+    Prompts the user for their location.
+    """
+    print("The name of City/Town must begin with a capital letter.")
+    curr_location = str(input("What is the name of your City/Town? "))
+
 
 
 def show_bmw():
@@ -140,7 +153,7 @@ def choice_of_car():
 
             if pick_car == 1:
                 print(f"{bmw_one} \n")
-                final_choice.append(bmw_one)
+                #final_choice.append(bmw_one)
                 print(final_choice)
                 return confirm_car_choice()
 
@@ -276,6 +289,8 @@ def reference_num():
 
         else:
             print(ref_num)
+            bmw_worksheet = SHEET.worksheet('Collections')
+            bmw_worksheet.append_row(final_order)
             break
     
 
