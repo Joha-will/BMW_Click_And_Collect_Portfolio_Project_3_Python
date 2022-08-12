@@ -4,6 +4,8 @@ from google.oauth2.service_account import Credentials
 
 import random
 
+from datetime import date 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -33,6 +35,7 @@ bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
 bmw_three = bmw_list[2]
 
+final_choice = []
 final_order = []
 
 
@@ -176,7 +179,7 @@ def choice_of_car():
 
             if pick_car == 1:
                 print(f"{bmw_one} \n")
-                #final_choice.append(bmw_one)
+                final_choice.append(bmw_one)
                 print(final_choice)
                 return confirm_car_choice()
 
@@ -288,6 +291,7 @@ def validate_order(data3):
         
         elif data3 == 'N':
             print('Not a problem')
+            #make a decision
             break
 
         elif data3 == 'Q':
@@ -312,10 +316,14 @@ def reference_num():
 
         else:
             print(ref_num)
-            bmw_worksheet = SHEET.worksheet('Collections')
-            bmw_worksheet.append_row(final_order)
             break
-    
+
+def send_order():
+    """
+    This function sends all the information so 
+    google work sheet, which stores the data so
+    the order can be prepared for the customer.
+    """
 
 def all_functions():
     """
