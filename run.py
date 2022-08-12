@@ -33,7 +33,6 @@ bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
 bmw_three = bmw_list[2]
 
-
 final_order = []
 
 
@@ -87,7 +86,7 @@ def create_user_name():
                 print("Username is valid! :) \n")
                 print("Now loading... \n")
                 final_order.append(user_name)
-                print(final_choice)
+                print(final_order)
 
                 print(
                     f"Hello {user_name} and welcome to BMW click and collect. \n")
@@ -104,7 +103,31 @@ def user_location():
     """
     print("The name of City/Town must begin with a capital letter.")
     curr_location = str(input("What is the name of your City/Town? "))
+    validate_location(curr_location)
 
+
+def validate_location(cities):
+    """
+    This function validates user location
+    function when users input data.
+    """
+    while True:
+        try:
+            if cities.lower() == "q":
+                print("GoodBye for now :) \n")
+                return all_functions()
+            elif cities[0].isupper():
+                print("Location confirmed! \n")
+                break
+            elif not cities[0].isupper():
+                raise ValueError("City/Town name must begin with a capital letter")
+            
+            else:
+                raise ValueError()
+
+        except ValueError as e:
+            print(f"Invalid data entered: {e}, please try again")
+            return user_location()
 
 
 def show_bmw():
@@ -300,6 +323,7 @@ def all_functions():
     """
     initial_val()
     create_user_name()
+    user_location()
     show_bmw()
     choice_of_car()
     show_features()
