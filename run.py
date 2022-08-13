@@ -45,23 +45,26 @@ final_order = []
 
 def initial_val():
     """
-    This is the initial validation so the user
-    can input y or n to start.
+    This is the initial validation which asks users
+    to enter Y if they would like to place an order
+    and starts the ordering process. Otherwise, it 
+    raises a ValueError and restarts.
     """
-    print("Enter 'y' if Yes and 'n' if No.")
-    initial_question = input("Would you like to place an order? ").lower()
     while True:
+        try:
+            print("Enter 'Y' if Yes.")
+            initial_question = input("Would you like to place an order? ").lower()
 
-        if initial_question == 'y':
-            print("Please wait loading ... \n")
-            break
-        elif initial_question == 'n':
-            print(" When ever your ready :) \n")
-            break
+            if initial_question == 'y':
+                print("\nPlease wait loading ... \n")
+                break
             
-        else:
+            else:
+                raise ValueError()
+
+        except ValueError:
             print("Invalid data entered, please try again! \n")
-            return initial_val()
+            return all_functions()
 
 
 def create_user_name():
