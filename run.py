@@ -4,7 +4,7 @@ from google.oauth2.service_account import Credentials
 
 import random
 
-from datetime import date 
+from datetime import datetime
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -35,9 +35,9 @@ bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
 bmw_three = bmw_list[2]
 
-# code from programiz to set current date.
-today = date.today()
-current_date = today.strftime("%d/%m/%Y")
+# code from programiz to set current date and time.
+time_date = datetime.now()
+current_date = time_date.strftime("%H:%M %d/%m/%Y")
 
 final_choice = []
 final_order = []
@@ -293,7 +293,7 @@ def validate_order(data3):
     while True:
         if data3 == 'Y':
             print("Of course! \n")
-            print("Your order is being prepared for collection ...")
+            print("Your order is being prepared for collection ... \n")
             break
         
         elif data3 == 'N':
@@ -317,7 +317,7 @@ def reference_num():
     number when called.
     """
     final_order.append(random.randint(10000000, 99999999))
-    print(f"Your reference number is {final_order[3]}. Take this with you to the nearest store in {final_order[2]}")
+    print(f"Your reference number is {final_order[3]}. Take this with you to the nearest BMW store in {final_order[2]} \n")
 
 
 def send_order():
@@ -330,8 +330,11 @@ def send_order():
     final_order.append(final_choice[0]['Model'])
     final_order.append(final_choice[0]['Colour'])
     final_order.append(final_choice[0]['FuelType'])
-    print(final_order)
     
+    bmw_worksheet = SHEET.worksheet('Collections')
+    bmw_worksheet.append_row(final_order)
+    print("Order Successful! \n")
+    return all_functions()
 
 
 def all_functions():
