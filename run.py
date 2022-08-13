@@ -35,6 +35,10 @@ bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
 bmw_three = bmw_list[2]
 
+# code from programiz to set current date.
+today = date.today()
+current_date = today.strftime("%d/%m/%Y")
+
 final_choice = []
 final_order = []
 
@@ -86,8 +90,10 @@ def create_user_name():
                 raise ValueError("Username can only have letters and numbers!")
             
             else:
+                final_order.clear()
                 print("Username is valid! :) \n")
                 print("Now loading... \n")
+                final_order.append(current_date)
                 final_order.append(user_name)
                 print(final_order)
 
@@ -104,7 +110,7 @@ def user_location():
     """
     Prompts the user for their location.
     """
-    print("The name of City/Town must begin with a capital letter.")
+    print("(*) The name of City/Town must begin with a capital letter. \n")
     curr_location = str(input("What is the name of your City/Town? "))
     validate_location(curr_location)
 
@@ -121,12 +127,14 @@ def validate_location(cities):
                 return all_functions()
             elif cities[0].isupper():
                 print("Location confirmed! \n")
+                final_order.append(cities)
+                print(final_order)
                 break
             elif not cities[0].isupper():
                 raise ValueError("City/Town name must begin with a capital letter")
-            
+            #broke app
             else:
-                raise ValueError()
+                raise ValueError('read instructions')
 
         except ValueError as e:
             print(f"Invalid data entered: {e}, please try again")
@@ -196,7 +204,6 @@ def choice_of_car():
                 return confirm_car_choice()
 
             elif pick_car == 4:
-                final_choice.clear()
                 print("GoodBye for now :) \n")
                 return all_functions()
 
@@ -309,14 +316,9 @@ def reference_num():
     This function generates a random 7 digit
     number when called.
     """
-    ref_num = []
-    while True:
-        if len(ref_num) < 8:
-            ref_num.append(random.randrange(0, 10))
+    final_order.append(random.randint(10000000, 99999999))
+    print(f"Your reference number is {final_order[3]}. Take this with you to the nearest store in {final_order[2]}")
 
-        else:
-            print(ref_num)
-            break
 
 def send_order():
     """
@@ -324,6 +326,13 @@ def send_order():
     google work sheet, which stores the data so
     the order can be prepared for the customer.
     """
+    final_order.append(final_choice[0]['Make'])
+    final_order.append(final_choice[0]['Model'])
+    final_order.append(final_choice[0]['Colour'])
+    final_order.append(final_choice[0]['FuelType'])
+    print(final_order)
+    
+
 
 def all_functions():
     """
@@ -337,6 +346,7 @@ def all_functions():
     show_features()
     make_order()
     reference_num()
+    send_order()
 
 
 all_functions()
