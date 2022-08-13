@@ -1,10 +1,7 @@
-import gspread
-
-from google.oauth2.service_account import Credentials
-
-import random
-
 from datetime import datetime
+import random
+import gspread
+from google.oauth2.service_account import Credentials
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -29,7 +26,7 @@ bmw_list = [
     {'Make': 'BMW', 'Model': 'M2 Comp', 'Colour': 'Grey', 'FuelType': 'Petrol'}
 ]
 
-descriptions = "is high quality with great endurance."
+Descriptions = "is high quality with great endurance."
 
 bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
@@ -47,7 +44,7 @@ def initial_val():
     """
     This is the initial validation which asks users
     to enter Y if they would like to place an order
-    and starts the ordering process. Otherwise, it 
+    and starts the ordering process. Otherwise, it
     raises a ValueError and restarts.
     """
     while True:
@@ -58,7 +55,7 @@ def initial_val():
             if initial_question == 'y':
                 print("\nPlease wait loading ... \n")
                 break
-            
+
             else:
                 raise ValueError()
 
@@ -69,43 +66,46 @@ def initial_val():
 
 def create_user_name():
     """
-    This function would ask the user to enter a username
-    5 characters long.
+    This function asks users to enter a username name.
+    Then it validates it by checking if it begins with
+    a capital letter, if the length is correct and if
+    it's made up of letters and numbers. Once the
+    username has met the requirment it then proceeds
+    to the next step or it raises a ValueError to let
+    users know what they are doing wrong. It also enables
+    users to quit/exit ordering process by enter Q.
     """
-    
-    print("Username should begin with a capital letter.")
-    print("Username should be 5 or more characters.")
-    print("Username should only have letters and numbers. \n")
-    print("You can always enter Q to quit/exit this process if needed. \n")
-    
     while True:
+        print("Username should begin with a capital letter.")
+        print("Username should be 3 or more characters.")
+        print("Username should only have letters and numbers. \n")
+        print("You can always enter Q to quit/exit this process if needed. \n")
+
         try:
+            final_order.clear()
             user_name = input("Enter a username you would like: ")
-            
+
             if user_name.lower() == 'q':
                 print("GoodBye for now :) \n")
                 return all_functions()
-            elif len(user_name) < 5:
-                raise ValueError("Username name should have 5 or more values!")
+            elif len(user_name) < 3:
+                raise ValueError("Username name should have 3 or more values!")
             elif not user_name[0].isupper():
                 raise ValueError("Username must begin with a Capital letter!")
             elif not user_name.isalnum():
                 raise ValueError("Username can only have letters and numbers!")
-            
+
             else:
-                final_order.clear()
                 print("Username is valid! :) \n")
                 print("Now loading... \n")
                 final_order.append(current_date)
                 final_order.append(user_name)
                 print(final_order)
-
-                print(
-                    f"Hello {user_name} and welcome to BMW click and collect. \n")
+                print(f"Hello {user_name} and welcome to BMW click and collect.\n")
                 break
 
         except ValueError as e:
-            print(f"Invalid username: {e}, please try again!")
+            print(f"Invalid username: {e}, please try again!\n")
             continue
 
 
