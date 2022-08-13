@@ -17,7 +17,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Bmw_Car_Orders')
 
-city = []
+
 list_of_questions = [
     "Can I see the cars in stores today?",
     "What cars are available in stores today?",
@@ -37,7 +37,7 @@ bmw_three = bmw_list[2]
 
 # code from programiz to set current date and time.
 time_date = datetime.now()
-current_date = time_date.strftime("%H:%M %d/%m/%Y")
+current_date = time_date.strftime("%H:%M - %d/%m/%Y")
 
 final_choice = []
 final_order = []
@@ -56,9 +56,9 @@ def initial_val():
             print("Please wait loading ... \n")
             break
         elif initial_question == 'n':
-            print("GoodBye for now :) \n")
-            continue
-
+            print(" When ever your ready :) \n")
+            break
+            
         else:
             print("Invalid data entered, please try again! \n")
             return initial_val()
@@ -184,6 +184,7 @@ def choice_of_car():
             print("To choose one of the car from the list. Type 1,2 or 3! \n")
             print("Or can enter 4 to quit/exit this process if needed. \n")
             pick_car = int(input("Which car are you interested in? "))
+            final_choice.clear()
 
             if pick_car == 1:
                 print(f"{bmw_one} \n")
@@ -223,26 +224,34 @@ def confirm_car_choice():
 
 
 def validate_car_choice(data1):
+    """
+    This function validates the data passed to it 
+    from the confirm car choice function. It checks
+    if the user has entered y, n, or q and executes
+    set tasks. Otherwise it raises a ValueError.
+    """
     while True:
-
-        if data1 == 'y':
-            print("Great Choice! \n")
-            break
+        try:
+            if data1 == 'y':
+                print("Great Choice! \n")
+                break
             
-        elif data1 == 'n':
-            print('Not a problem \n')
-            final_choice.clear()
-            for car in bmw_list:
-                print(f"{car} \n")
-            choice_of_car()
+            elif data1 == 'n':
+                print('Not a problem \n')
+                for car in bmw_list:
+                    print(f"{car} \n")
+                return choice_of_car()
 
-        elif data1 == 'q':
-            print("GoodBye for now :) \n")
-            final_choice.clear()
-            return all_functions()
-        else:
-            print("Invalid data! \n")
-            confirm_car_choice()
+            elif data1 == 'q':
+                print("GoodBye for now :) \n")
+                return all_functions()
+            else:
+                raise ValueError()
+
+        except ValueError:
+            print("Invalid data entered!")
+            print(final_choice)
+            return confirm_car_choice()
 
 
 def show_features():
@@ -316,7 +325,8 @@ def reference_num():
     This function generates a random 7 digit
     number when called.
     """
-    final_order.append(random.randint(10000000, 99999999))
+    ref_num = random.randint(10000000, 99999999)
+    final_order.append(ref_num)
     print(f"Your reference number is {final_order[3]}. Take this with you to the nearest BMW store in {final_order[2]} \n")
 
 
