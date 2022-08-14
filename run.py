@@ -40,6 +40,37 @@ final_choice = []
 final_order = []
 
 
+def welcome_logo():
+    """
+    This function displays a bmw
+    logo to the users.
+    """
+    print("██████╗ ███╗   ███╗██╗    ██╗     ██████╗██╗     ██╗ ██████╗██╗  ██╗     █████╗ ███╗   ██╗██████╗      ██████╗ ██████╗ ██╗     ██╗     ███████╗ ██████╗████████╗")
+    print("██╔══██╗████╗ ████║██║    ██║    ██╔════╝██║     ██║██╔════╝██║ ██╔╝    ██╔══██╗████╗  ██║██╔══██╗    ██╔════╝██╔═══██╗██║     ██║     ██╔════╝██╔════╝╚══██╔══╝")
+    print("██████╔╝██╔████╔██║██║ █╗ ██║    ██║     ██║     ██║██║     █████╔╝     ███████║██╔██╗ ██║██║  ██║    ██║     ██║   ██║██║     ██║     █████╗  ██║        ██║   ")
+    print("██╔══██╗██║╚██╔╝██║██║███╗██║    ██║     ██║     ██║██║     ██╔═██╗     ██╔══██║██║╚██╗██║██║  ██║    ██║     ██║   ██║██║     ██║     ██╔══╝  ██║        ██║   ")
+    print("██████╔╝██║ ╚═╝ ██║╚███╔███╔╝    ╚██████╗███████╗██║╚██████╗██║  ██╗    ██║  ██║██║ ╚████║██████╔╝    ╚██████╗╚██████╔╝███████╗███████╗███████╗╚██████╗   ██║   ")
+    print("╚═════╝ ╚═╝     ╚═╝ ╚══╝╚══╝      ╚═════╝╚══════╝╚═╝ ╚═════╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝      ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝ ╚═════╝   ╚═╝   ")
+    print("                                        ╓▄╗╗╗▀▀▀▀▀▀▀▀▀▀═──┬╤▄")
+    print("                                    ▄██╜   ▄███████▀   ▌▓█  ╫██▄")
+    print("                                ╓▄██▀   ▄███████▀     ▐│█   ██ ╟▌▀▄")
+    print("                              ▄██▀   ╓███████▀     ▄███▐▌┌ ╠▀╫▐╚ ┌─█")
+    print("                        ▄╗═▀╬└░░░╡░░░╠╙╙╙▀▀▀╙╙╙╙╜▀▀▀▀▀┌▐████▀▀╓═   ▐")
+    print("                   ╓╗▀╙╙╔░         ╚┘       ╓╔┌─  ─     ╔ ╚▄─ ╓┌▒ ▓▐")
+    print("                ▄▀╙─ ░░         ╧     ╓┌╔░╛  ┌ ░╔░═  ─  ┌  ╔░╓╗╣╬╗█▐")
+    print("             ▄█               ╛  ╔┌░░░┴ ┌┌░░░ │┘╓╔─  ╓░╓╦░▄▒╬╬╝╬╟██▐")
+    print("            ╓█║  ╘  ░┬╚░░░░  ░┌░  ░░╔░▒│   ░╜░░  ╧┌▄▓▓▒╒█╬╬╝╙ ╬╠██▌")
+    print("            ▌ ╟████▄ ╣▀ ░░│  ░░ │░░─┬═▄▄▄╧╚╝▀██░╛╔██ █▌╟╬╜ ╓╩▄██▀")
+    print("            ▌░ └████▌█████████▓████▌█╦▄╔█▌█╓█▀─░║███▌ ▌╬▒╦╬███╙")
+    print("            ╙▒╕░┌┐╙▀▀╙████████▀░░░╙─═╩▀▀▀░░░░  ║████▌ █╬▄██▀")
+    print("             ▌▓╟▄    ░░╔╔╔╔┌ ░░░░░░░░╦░░░  │  ▐╫▌███▌ ███▀")
+    print("             █▒▌╚█████▄▄▄      ═──═══└░└╚ ╚▄  ╬█▌███ ╟█▀")
+    print("             ╙▀██▄╙╚╩╠████████▌╘▒▓████████▌╙▒╠╟████▀┌")
+    print("                 ╙▀▀███▄╠╠╙╚╩╬▄┘╠╙╙╙▀▀▀▀▀▀▀░╠╬████▄═")
+    print("                        ╙▀▀▀██████▄▄▄██████████▀▀└")
+    print("                                  └╙╙╙╙╙╙╙")
+
+
 def initial_val():
     """
     This is the initial validation which asks users
@@ -111,7 +142,8 @@ def create_user_name():
 
 def user_location():
     """
-    Prompts the user for their location.
+    This function asks users to input their
+    town/city.
     """
     print("(*) The name of City/Town must begin with a capital letter. \n")
     curr_location = str(input("What is the name of your City/Town? "))
@@ -125,20 +157,20 @@ def validate_location(cities):
     """
     while True:
         try:
+
             if cities.lower() == "q":
                 print("GoodBye for now :) \n")
                 return all_functions()
-            elif cities[0].isupper():
-                print("Location confirmed! \n")
+            
+            elif not cities[0].isupper():
+                raise ValueError("City/Town name must begin with a capital letter")
+                
+            else:
+                print("City/Town confirmed! \n")
                 final_order.append(cities)
                 print(final_order)
                 break
-            elif not cities[0].isupper():
-                raise ValueError("City/Town name must begin with a capital letter")
-            #broke app
-            else:
-                raise ValueError('read instructions')
-
+            
         except ValueError as e:
             print(f"Invalid data entered: {e}, please try again")
             return user_location()
@@ -354,6 +386,7 @@ def all_functions():
     """
     This function runs all the other functions
     """
+    welcome_logo()
     initial_val()
     create_user_name()
     user_location()
