@@ -120,7 +120,7 @@ def create_user_name():
         print("Username should begin with a capital letter.")
         print("Username should be 3 or more characters.")
         print("Username should only have letters and numbers. \n")
-        print("You can always enter Q to quit/exit this process if needed. \n")
+        print("You can always enter Q to quit/exit this process at any time. \n")
 
         try:
             final_order.clear()
@@ -156,6 +156,7 @@ def user_location():
     town/city.
     """
     print("(*) The name of City/Town must begin with a capital letter. \n")
+    print("You can always enter Q to quit/exit this process at any time. \n")
     curr_location = str(input("What is the name of your City/Town? "))
     validate_location(curr_location)
 
@@ -221,33 +222,32 @@ def show_bmw():
                
 def choice_of_car():
     """
-    This function ask the user for their choice of car
-    and ask them to input 1,2 or 3 based on the list of
-    cars shown.
+    This function asks users for their choice of car
+    and instructs them to input 1,2 or 3 based on the list of
+    cars shown. Once they have selected the car of their
+    choice, it adds the car to the order list and shows them
+    the car they have choosen.
     """
     while True:
         try:
-            print("To choose one of the car from the list. Type 1,2 or 3! \n")
-            print("Or can enter 4 to quit/exit this process if needed. \n")
+            print("To choose one of the car from the list. Type 1,2 or 3!")
+            print("Or enter 4 to quit/exit this process at any time. \n")
             pick_car = int(input("Which car are you interested in? "))
             final_choice.clear()
 
             if pick_car == 1:
-                print(f"{bmw_one} \n")
                 final_choice.append(bmw_one)
-                print(final_choice)
+                print(f"\n{final_choice}")
                 return confirm_car_choice()
 
             elif pick_car == 2:
-                print(f"{bmw_two} \n")
                 final_choice.append(bmw_two)
-                print(final_choice)
+                print(f"\n{final_choice}")
                 return confirm_car_choice()
 
             elif pick_car == 3:
-                print(f"{bmw_three} \n")
                 final_choice.append(bmw_three)
-                print(final_choice)
+                print(f"\n{final_choice}")
                 return confirm_car_choice()
 
             elif pick_car == 4:
@@ -259,13 +259,15 @@ def choice_of_car():
                 raise ValueError("To choose one of the car from the list. Type 1, 2 or 3! \n")
         except ValueError as e:
             print(f"Invalid data entered: {e}")
+            for car in bmw_list:
+                print(f"\n{car} \n")
             continue
 
 
 def confirm_car_choice():
 
     print("\n Enter 'y' if Yes and 'n' if No.")
-    print("You can always enter Q to quit/exit this process if needed. \n")
+    print("You can always enter Q to quit/exit this process at any time. \n")
     confirm_choice = str(input("Please can you confirm this is the correct car. ")).lower()
     validate_car_choice(confirm_choice)
 
@@ -304,6 +306,7 @@ def validate_car_choice(data1):
 
 def show_features():
     print("Enter 'y' if Yes and 'n' if No.")
+    print("You can always enter Q to quit/exit this process at any time. \n")
     car_features = str(input("Would you like a description of the car? ")).lower()
     validate_show_features(car_features)
 
@@ -338,6 +341,7 @@ def make_order():
     choosen.
     """
     print("Enter 'y' if Yes and 'n' if No.")
+    print("You can always enter Q to quit/exit this process at any time. \n")
     place_order = str(input("Would you like to place an order? ")).upper()
     validate_order(place_order)
 
