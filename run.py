@@ -41,6 +41,13 @@ final_choice = []
 final_order = []
 
 
+def clear_terminal():
+    """
+    This function clears/refreshes the
+    terminal when users quit or completes
+    the ording process.
+    """
+    os.system('clear')
 
 
 def welcome_logo():
@@ -121,6 +128,7 @@ def create_user_name():
 
             if user_name.lower() == 'q':
                 print("GoodBye for now :) \n")
+                clear_terminal()
                 return all_functions()
             elif len(user_name) < 3:
                 raise ValueError("Username name should have 3 or more values!")
@@ -161,6 +169,7 @@ def validate_location(cities):
         try:
             if cities.lower() == "q":
                 print("GoodBye for now :) \n")
+                clear_terminal()
                 return all_functions()
             
             elif not cities[0].isupper():
@@ -194,12 +203,13 @@ def show_bmw():
         try:
             user_question = str(input("Ask a question! "))
             if user_question in list_of_questions:
-                print("Here is a list of the cars that are available. \n")
+                print("\nHere is a list of the cars that are available. \n")
                 for car in bmw_list:
                     print(f"{car} \n")
                 break
             elif user_question.lower() == 'q':
                 print("GoodBye for now :) \n")
+                clear_terminal()
                 return all_functions()
                 
             else:
@@ -243,6 +253,7 @@ def choice_of_car():
 
             elif pick_car == 4:
                 print("GoodBye for now :) \n")
+                clear_terminal()
                 return all_functions()
 
             else:
@@ -256,7 +267,7 @@ def confirm_car_choice():
 
     print("\n Enter 'y' if Yes and 'n' if No.")
     print("You can always enter Q to quit/exit this process if needed. \n")
-    confirm_choice = str(input("Is this the car you want? ")).lower()
+    confirm_choice = str(input("Please can you confirm this is the correct car. ")).lower()
     validate_car_choice(confirm_choice)
 
 
@@ -281,6 +292,7 @@ def validate_car_choice(data1):
 
             elif data1 == 'q':
                 print("GoodBye for now :) \n")
+                clear_terminal()
                 return all_functions()
             else:
                 raise ValueError()
@@ -293,7 +305,7 @@ def validate_car_choice(data1):
 
 def show_features():
     print("Enter 'y' if Yes and 'n' if No.")
-    car_features = str(input("Would you like to read more about this car? ")).lower()
+    car_features = str(input("Would you like a description of the car? ")).lower()
     validate_show_features(car_features)
 
 
@@ -302,7 +314,7 @@ def validate_show_features(data2):
 
         if data2 == 'y':
             if final_choice[0] == bmw_one or bmw_two or bmw_three:
-                print(f"\nThis {final_choice[0]['Model']} {descriptions}")
+                print(f"\nThis {final_choice[0]['Model']} {Descriptions}")
             break
     
         elif data2 == 'n':
@@ -312,6 +324,7 @@ def validate_show_features(data2):
         elif data2 == 'q':
             print("GoodBye for now :) \n")
             final_choice.clear()
+            clear_terminal()
             return all_functions()    
 
         else:
@@ -350,6 +363,7 @@ def validate_order(data3):
         elif data3 == 'Q':
             print("GoodBye for now :) \n")
             final_choice.clear()
+            clear_terminal()
             return all_functions()
         
         else:
@@ -364,7 +378,8 @@ def reference_num():
     """
     ref_num = random.randint(10000000, 99999999)
     final_order.append(ref_num)
-    print(f"Your reference number is {final_order[3]}. Take this with you to the nearest BMW store in {final_order[2]} \n")
+    print(f"Your reference number is {final_order[3]}.")
+    print(f"Make a note of your reference number to collect your car at the nearest BMW store in {final_order[2]}. \n")
 
 
 def send_order():
