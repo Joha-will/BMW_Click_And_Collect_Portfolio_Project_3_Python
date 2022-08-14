@@ -1,6 +1,7 @@
 from datetime import datetime
 import random
 import os
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -128,6 +129,7 @@ def create_user_name():
 
             if user_name.lower() == 'q':
                 print("GoodBye for now :) \n")
+                time.sleep(6)
                 clear_terminal()
                 return all_functions()
             elif len(user_name) < 3:
@@ -170,6 +172,7 @@ def validate_location(cities):
         try:
             if cities.lower() == "q":
                 print("GoodBye for now :) \n")
+                time.sleep(6)
                 clear_terminal()
                 return all_functions()
             
@@ -210,6 +213,7 @@ def show_bmw():
                 break
             elif user_question.lower() == 'q':
                 print("GoodBye for now :) \n")
+                time.sleep(6)
                 clear_terminal()
                 return all_functions()
                 
@@ -252,6 +256,7 @@ def choice_of_car():
 
             elif pick_car == 4:
                 print("GoodBye for now :) \n")
+                time.sleep(6)
                 clear_terminal()
                 return all_functions()
 
@@ -276,7 +281,6 @@ def confirm_car_choice():
     confirm_choice = str(input("Please can you confirm this is the correct car. ")).lower()
     validate_car_choice(confirm_choice)
 
-#left off
 
 def validate_car_choice(data1):
     """
@@ -299,6 +303,7 @@ def validate_car_choice(data1):
 
             elif data1 == 'q':
                 print("GoodBye for now :) \n")
+                time.sleep(6)
                 clear_terminal()
                 return all_functions()
             else:
@@ -344,6 +349,7 @@ def validate_show_features(data2):
             elif data2 == 'q':
                 print("GoodBye for now :) \n")
                 final_choice.clear()
+                time.sleep(6)
                 clear_terminal()
                 return all_functions()    
 
@@ -374,26 +380,30 @@ def validate_order(data3):
     set tasks. Otherwise it raises a ValueError.
     """
     while True:
-
-        if data3 == 'Y':
-            print("Of course! \n")
-            print("Your order is being prepared for collection ... \n")
-            break
+        try:
+            if data3 == 'Y':
+                print("Of course! \n")
+                print("Your order is being prepared for collection ... \n")
+                break
         
-        elif data3 == 'N':
-            print('Thank you.')
-            print('GoodBye for now :)')
-            clear_terminal()
-            return all_functions()
-            break
+            elif data3 == 'N':
+                print('Thank you.')
+                print('GoodBye for now :)')
+                time.sleep(.5)
+                clear_terminal()
+                return all_functions()
 
-        elif data3 == 'Q':
-            print("GoodBye for now :) \n")
-            final_choice.clear()
-            clear_terminal()
-            return all_functions()
+            elif data3 == 'Q':
+                print("GoodBye for now :) \n")
+                final_choice.clear()
+                time.sleep(6)
+                clear_terminal()
+                return all_functions()
         
-        else:
+            else:
+                raise ValueError()
+
+        except ValueError:
             print("Invalid data entered, please try again.")
             return make_order()
 
@@ -411,6 +421,9 @@ def reference_num():
     print(f"Make a note of your reference number to collect your car at the nearest BMW store in {final_order[2]}. \n")
 
 
+timer = time.sleep(31)
+
+
 def send_order():
     """
     This function sends all the information to
@@ -425,6 +438,8 @@ def send_order():
     bmw_worksheet = SHEET.worksheet('Collections')
     bmw_worksheet.append_row(final_order)
     print("Order Successful! \n")
+    print(f"This page will refresh in {timer}")
+    clear_terminal()
     return all_functions()
 
 
