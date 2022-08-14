@@ -195,7 +195,7 @@ def show_bmw():
     print("Please ask one of the following questions listed below. \n")
     print("Each sentence must begin with a capital letter! \n")
     print("Each sentence must end with question mark! \n")
-    print("Please ask the question beginning with a capital letter.")
+    print("Please ask the question beginning with a capital letter. \n")
     print("(*). What cars are available in stores today? \n")
     print("(*). Can you show me the list of cars in stores today? \n")
     print("You can always enter Q to quit/exit this process at any time. \n")
@@ -213,11 +213,10 @@ def show_bmw():
                 return all_functions()
                 
             else:
-                print("this is not it")
-                raise ValueError("This is not it")
+                raise ValueError("Please ask one of the question listed below!")
         except ValueError as e:
-            print(f"This is not it {e}")
-            continue
+            print(f"Invalid data entered: {e}")
+            return show_bmw()
 
                
 def choice_of_car():
