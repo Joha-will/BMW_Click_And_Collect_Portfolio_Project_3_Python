@@ -1,5 +1,6 @@
 from datetime import datetime
 import random
+import os
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -38,6 +39,8 @@ current_date = time_date.strftime("%H:%M - %d/%m/%Y")
 
 final_choice = []
 final_order = []
+
+
 
 
 def welcome_logo():
@@ -92,7 +95,7 @@ def initial_val():
 
         except ValueError:
             print("Invalid data entered, please try again! \n")
-            return all_functions()
+            continue
 
 
 def create_user_name():
@@ -131,7 +134,6 @@ def create_user_name():
                 print("Now loading... \n")
                 final_order.append(current_date)
                 final_order.append(user_name)
-                print(final_order)
                 print(f"Hello {user_name} and welcome to BMW click and collect.\n")
                 break
 
@@ -157,7 +159,6 @@ def validate_location(cities):
     """
     while True:
         try:
-
             if cities.lower() == "q":
                 print("GoodBye for now :) \n")
                 return all_functions()
@@ -166,9 +167,8 @@ def validate_location(cities):
                 raise ValueError("City/Town name must begin with a capital letter")
                 
             else:
-                print("City/Town confirmed! \n")
+                print("\nCity/Town confirmed! \n")
                 final_order.append(cities)
-                print(final_order)
                 break
             
         except ValueError as e:
@@ -178,21 +178,23 @@ def validate_location(cities):
 
 def show_bmw():
     """
-    Prompts the user to user a question.
+    This function instructs the users
+    to enter one of the questions showed
+    below. Once entered correctly, it
+    displays a list of cars available.
     """
-    print("Questions you can ask can be found below with (*) marked. \n")
+    print("Please ask one of the following questions listed below. \n")
     print("Each sentence must begin with a capital letter! \n")
     print("Each sentence must end with question mark! \n")
     print("Please ask the question beginning with a capital letter.")
-    print("(*). Can I see the cars in stores today? \n")
     print("(*). What cars are available in stores today? \n")
     print("(*). Can you show me the list of cars in stores today? \n")
-    print("You can always enter Q to quit/exit this process if needed. \n")
+    print("You can always enter Q to quit/exit this process at any time. \n")
     while True:
         try:
             user_question = str(input("Ask a question! "))
             if user_question in list_of_questions:
-                print("Here are the cars we have available in stores today.\n")
+                print("Here is a list of the cars that are available. \n")
                 for car in bmw_list:
                     print(f"{car} \n")
                 break
