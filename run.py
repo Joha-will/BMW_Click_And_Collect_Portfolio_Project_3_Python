@@ -265,8 +265,13 @@ def choice_of_car():
 
 
 def confirm_car_choice():
-
-    print("\n Enter 'y' if Yes and 'n' if No.")
+    """
+    This function asks users to enter
+    Y to confirm the choice they
+    have made or N to back to list of
+    cars.
+    """
+    print("\n Enter 'Y' if Yes and 'N' if No.")
     print("You can always enter Q to quit/exit this process at any time. \n")
     confirm_choice = str(input("Please can you confirm this is the correct car. ")).lower()
     validate_car_choice(confirm_choice)
