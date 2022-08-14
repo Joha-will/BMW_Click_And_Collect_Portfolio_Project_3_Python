@@ -226,7 +226,7 @@ def choice_of_car():
     and instructs them to input 1,2 or 3 based on the list of
     cars shown. Once they have selected the car of their
     choice, it adds the car to the order list and shows them
-    the car they have choosen.
+    the car they have chosen.
     """
     while True:
         try:
@@ -276,6 +276,7 @@ def confirm_car_choice():
     confirm_choice = str(input("Please can you confirm this is the correct car. ")).lower()
     validate_car_choice(confirm_choice)
 
+#left off
 
 def validate_car_choice(data1):
     """
@@ -310,62 +311,80 @@ def validate_car_choice(data1):
 
 
 def show_features():
-    print("Enter 'y' if Yes and 'n' if No.")
+    """
+    This function asks users to enter
+    Y for a description of the car they
+    have selected or N to go to the next
+    step.
+    """
+    print("Enter 'Y' if Yes and 'Q' if No.")
     print("You can always enter Q to quit/exit this process at any time. \n")
     car_features = str(input("Would you like a description of the car? ")).lower()
     validate_show_features(car_features)
 
 
 def validate_show_features(data2):
+    """
+    This function validates the data passed to it 
+    from the show features function. It checks
+    if the user has entered y, n, or q and executes
+    set tasks. Otherwise it raises a ValueError.
+    """
     while True:
-
-        if data2 == 'y':
-            if final_choice[0] == bmw_one or bmw_two or bmw_three:
-                print(f"\nThis {final_choice[0]['Model']} {Descriptions}")
-            break
+        try:
+            if data2 == 'y':
+                if final_choice[0] == bmw_one or bmw_two or bmw_three:
+                    print(f"\nThis {final_choice[0]['Model']} {Descriptions}")
+                    break
     
-        elif data2 == 'n':
-            print("Not a problem \n")
-            break
+            elif data2 == 'n':
+                print("Not a problem \n")
+                break
 
-        elif data2 == 'q':
-            print("GoodBye for now :) \n")
-            final_choice.clear()
-            clear_terminal()
-            return all_functions()    
+            elif data2 == 'q':
+                print("GoodBye for now :) \n")
+                final_choice.clear()
+                clear_terminal()
+                return all_functions()    
 
-        else:
+            else:
+                raise ValueError()
+        except ValueError:
             print('Invalid data entered')
-            show_features()
+            return show_features()
 
 
 def make_order():
     """
     This function asks users if they want
     to place an order on the car they have 
-    choosen.
+    chosen.
     """
-    print("Enter 'y' if Yes and 'n' if No.")
+    print("\nEnter 'Y' if Yes and 'N' if No.")
     print("You can always enter Q to quit/exit this process at any time. \n")
-    place_order = str(input("Would you like to place an order? ")).upper()
+    place_order = str(input("Would you like to complete the order? ")).upper()
     validate_order(place_order)
 
 
 def validate_order(data3):
     """
-    This function validates the data that is
-    provided to the make order function. And 
-    makes a decision after.
+    This function validates the data passed to it 
+    from the make order function. It checks
+    if the user has entered Y, N, or Q and executes
+    set tasks. Otherwise it raises a ValueError.
     """
     while True:
+
         if data3 == 'Y':
             print("Of course! \n")
             print("Your order is being prepared for collection ... \n")
             break
         
         elif data3 == 'N':
-            print('Not a problem')
-            #make a decision
+            print('Thank you.')
+            print('GoodBye for now :)')
+            clear_terminal()
+            return all_functions()
             break
 
         elif data3 == 'Q':
@@ -382,7 +401,9 @@ def validate_order(data3):
 def reference_num():
     """
     This function generates a random 7 digit
-    number when called.
+    number when called. Then append the number
+    to the final order list and print a detailed
+    message to the users.
     """
     ref_num = random.randint(10000000, 99999999)
     final_order.append(ref_num)
@@ -392,7 +413,7 @@ def reference_num():
 
 def send_order():
     """
-    This function sends all the information so 
+    This function sends all the information to
     google work sheet, which stores the data so
     the order can be prepared for the customer.
     """
@@ -409,7 +430,7 @@ def send_order():
 
 def all_functions():
     """
-    This function runs all the other functions
+    This function runs all the other functions.
     """
     welcome_logo()
     initial_val()
