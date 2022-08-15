@@ -189,15 +189,42 @@ def create_user_name():
 
 def user_age():
     """
-    This function asks user for their age. If for their age is more
-    than 18 it continues the ordering process. If their age is less
-    than 18 the process ends.
+    This function asks user for their age. 
     """
     print_text("Please enter your age below.\n")
     print("\n")
-    ask_for_age = int(input("How old are you? \n"))
+    ask_for_age = input("How old are you? \n")
+    validate_age(ask_for_age)
 
 
+def validate_age(your_age):
+    """
+    This function validates the data passed to it from
+    the user_age function. If for their age is more
+    than 18 it continues the ordering process. If their
+    age is less than 18 the process ends.
+    """
+    while True:
+        try:
+            if len(your_age) > 3:
+                raise ValueError("Age cannot have more than 3 characters!")
+            
+            elif not your_age.isdigit():
+                raise ValueError("Age must only be numbers!")
+            
+            elif your_age < 18:
+                print_text(f"Sorry {final_choice[0]} you are not old enough.")
+                print_text("GoodBye for now :) \n")
+                time.sleep(4)
+                clear_terminal()
+                return all_functions()
+            
+            else:
+                print_text("Age confirmed!")
+                break
+        except ValueError as e:
+            print(f"{Back.RED}{e}")
+            return user_age()
 
 
 def user_location():

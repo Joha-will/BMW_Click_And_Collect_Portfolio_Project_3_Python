@@ -26,18 +26,32 @@
 ## **Introduction**
 Welcome to my third project, which is a command-line user interface application built mainly using python.
 
-What inspired me to build this app was having the ability to independtly coming up with an idea, putting it 
-together and actully making it work. This idea also come from the love and interest I have for BMW cars. At 
-the planning phase of my third project it was difficult as I was unsure of what I was going to build and I
-was also new to python. But I stayed motivated and came up with this project which I learned alot from and
-it has helped me to gain more experience with the python language as well as improving my 
+What inspired me to build this app was having the motivation to independently create an idea, put it 
+together and make it work. This idea also came from the love and interest I have for BMW cars. At 
+the planning phase of my third project I was unsure of what I was going to build which made very challenging as well as being a novice using python. However, I stayed motivated and focused and created this project which I learned a lot from and it has helped me to gain more experience and skills with the python language. 
+
+In this README I will detail the steps I took to develop and create this project, with the use of  screen photos, images, links, charts and more.
+
+Thank you for viewing my project.
+
+I hope you find the application useful!
+
 
 
 ## **User Experience**
 
 
 ### **Target Audience**
-- This is for people preferably
+- This application is targeted to people above the age of 17 and older which is the legal age in the United Kingdom. 
+
+- This application is not gender specific. 
+
+- This application is targeted to people who want to buy a BMW car. 
+
+- This application is targeted to people who are time restricted. 
+
+- This application is targeted to the citizens of the United Kingdom. 
+
 
 
 ### **User Stories**
@@ -50,20 +64,22 @@ it has helped me to gain more experience with the python language as well as imp
 - As a user of the app, I would like to get information or a description of the car I am ordering.
 
 ### **Site owner goals**
-
-
+- As the site owner I would like an automated click and collect which enables the users to easily place an order and collect at the location nearest them. 
+- As the site owner I would like an application to provide clear instructions for making an easy ordering process for the users. 
+- As the site owner I would like an applcation to be able to perform the click and collect process successfully with little or no employee input to allow employees to focus on larger scaled jobs. 
 
 
 ### **How to use**
-This BMW click and collect app is used for making car orders and getting them prepared for collection at your nearest
-store in your current town or city. This app might be similar to a click and collect app you have used before which
-would make it even easier to use. To use this app, all you need to do is follow the instructions provided by the app and
-fill out the input fields with the required information, in the required format. The app will provide all the information
-required such as the showing the list of cars available for you to choose from, as well as alerting you with messages if
-you enter invalid data in the input fields. Once you are happy with your choice of car and you have successfully completed
-your order. The app provides a detailed message on what you need to do for collection process.
+This BMW click and collect app, is used for making car orders and getting them prepared for collection at your nearest
+store in your current town or city. To use this app, you need to follow the instructions on the screen and
+fill out the input fields with the information needed in the correct format. The app will provide the list of cars available for you to choose from as well as, alerting you with messages if you enter invalid data in the input fields. Once you are happy with your choice of car and you have successfully completed your order. The app provides a detailed message on what you need to do for the collection process.
 
-## **Introduction**
+
+## **Features**
+- This BMW click and collect application has a title in font design 'ANSI shadow' and BMW car logo.
+- Type writer
+- Colours
+- Username - Input fields 
 
 ## Creating the Heroku app
 
