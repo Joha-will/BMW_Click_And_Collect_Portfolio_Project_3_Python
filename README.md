@@ -1,14 +1,69 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **BMW Click and Collect** 
 
-Welcome Joha-will,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
-## Reminders
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+
+
+
+
+
+
+
+
+
+
+## **Table of Contents**
+
+
+
+
+
+
+
+
+
+## **Introduction**
+Welcome to my third project, which is a command-line user interface application built mainly using python.
+
+What inspired me to build this app was having the ability to independtly coming up with an idea, putting it 
+together and actully making it work. This idea also come from the love and interest I have for BMW cars. At 
+the planning phase of my third project it was difficult as I was unsure of what I was going to build and I
+was also new to python. But I stayed motivated and came up with this project which I learned alot from and
+it has helped me to gain more experience with the python language as well as improving my 
+
+
+## **User Experience**
+
+
+### **Target Audience**
+- This is for people preferably
+
+
+### **User Stories**
+- As a user of the app, I want to have clear instructions on how to use the app.
+- As a user of the app, I want to easily navigate around without difficulty.
+- As a user of the app, I want to be made aware of any invalid data I input and how to rectify it.
+- As a user of the app, I would like an easy way of ordering a car and get it prepared for collection.
+- As a user of the app, I would like a reference to show as proof of order.
+- As a user of the app, I would like to see the cars that's available for me to order.
+- As a user of the app, I would like to get information or a description of the car I am ordering.
+
+### **Site owner goals**
+
+
+
+
+### **How to use**
+This BMW click and collect app is used for making car orders and getting them prepared for collection at your nearest
+store in your current town or city. This app might be similar to a click and collect app you have used before which
+would make it even easier to use. To use this app, all you need to do is follow the instructions provided by the app and
+fill out the input fields with the required information, in the required format. The app will provide all the information
+required such as the showing the list of cars available for you to choose from, as well as alerting you with messages if
+you enter invalid data in the input fields. Once you are happy with your choice of car and you have successfully completed
+your order. The app provides a detailed message on what you need to do for collection process.
+
+## **Introduction**
 
 ## Creating the Heroku app
 

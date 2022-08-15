@@ -34,7 +34,7 @@ bmw_list = [
 ]
 
 DESCRIPTION = "is ultramodern luxury car with the latest features and "\
-    "technologies.\nOne of the things that make this car stand out is the"\
+    "technologies.\nOne of the things that make this car stand out is the "\
     "attention to detail.\nThere is no doubt you will enjoy this car. "
 
 bmw_one = bmw_list[0]
@@ -185,6 +185,19 @@ def create_user_name():
         except ValueError as e:
             print(f"{Back.RED}Invalid username: {e}, please try again!")
             continue
+
+
+def user_age():
+    """
+    This function asks user for their age. If for their age is more
+    than 18 it continues the ordering process. If their age is less
+    than 18 the process ends.
+    """
+    print_text("Please enter your age below.\n")
+    print("\n")
+    ask_for_age = int(input("How old are you? \n"))
+
+
 
 
 def user_location():
@@ -472,8 +485,8 @@ def reference_num():
     print_text(f"Your reference number is {final_order[3]}.\n")
     print('\n')
     print_text(f"""
-    \nMake a note of your reference number to collect your car at
-    the nearest BMW store in {final_order[2]}.\n
+    \nMake a note of your reference number to collect your car at the nearest
+BMW store in {final_order[2]}.
     """)
 
 
@@ -509,6 +522,7 @@ def all_functions():
     welcome_logo()
     initial_val()
     create_user_name()
+    user_age()
     user_location()
     show_bmw()
     choice_of_car()
