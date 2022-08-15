@@ -2,6 +2,7 @@ from datetime import datetime
 import random
 import os
 import time
+import sys
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -40,6 +41,31 @@ current_date = time_date.strftime("%H:%M - %d/%m/%Y")
 
 final_choice = []
 final_order = []
+
+
+def print_text(text):
+    """
+    This code is from
+    www.101computing.net/python-typing-text-effect/
+    """
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+
+
+def type_input(text):
+    """
+    This code is from
+    www.101computing.net/python-typing-text-effect/
+    """
+
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+    value = input()  
+    return value
 
 
 def clear_terminal():
@@ -91,18 +117,18 @@ def initial_val():
     """
     while True:
         try:
-            print("Enter 'Y' if Yes.")
-            initial_question = input("Would you like to place an order? ").lower()
+            print_text("Enter 'Y' if Yes. \n")
+            initial_question = type_input("Would you like to place an order? ").lower()
 
             if initial_question == 'y':
-                print("\nPlease wait loading ... \n")
+                print_text("\nPlease wait loading ...")
                 break
 
             else:
                 raise ValueError()
 
         except ValueError:
-            print("Invalid data entered, please try again! \n")
+            print_text("Invalid data entered, please try again! \n")
             continue
 
 
@@ -118,18 +144,19 @@ def create_user_name():
     users to quit/exit ordering process by enter Q.
     """
     while True:
-        print("Username should begin with a capital letter.")
-        print("Username should be 3 or more characters.")
-        print("Username should only have letters and numbers. \n")
-        print("You can always enter Q to quit/exit this process at any time. \n")
+        print_text('\n')
+        print_text("Username should begin with a capital letter.\n")
+        print_text("Username should be 3 or more characters.\n")
+        print_text("Username should only have letters and numbers. \n")
+        print_text("You can always enter Q to quit/exit this process at any time. \n")
 
         try:
             final_order.clear()
-            user_name = input("Enter a username you would like: ")
+            user_name = type_input("Enter a username you would like: ")
 
             if user_name.lower() == 'q':
-                print("GoodBye for now :) \n")
-                time.sleep(6)
+                print_text("GoodBye for now :) \n")
+                time.sleep(4)
                 clear_terminal()
                 return all_functions()
             elif len(user_name) < 3:
@@ -140,15 +167,17 @@ def create_user_name():
                 raise ValueError("Username can only have letters and numbers!")
 
             else:
-                print("Username is valid! :) \n")
-                print("Now loading... \n")
+                print_text("Username is valid! :)")
+                print_text("\n")
+                print_text("Now loading... \n")
                 final_order.append(current_date)
                 final_order.append(user_name)
-                print(f"Hello {user_name} and welcome to BMW click and collect.\n")
+                print_text("\n")
+                print_text(f"\nHello {user_name} and welcome to BMW click and collect.\n")
                 break
 
         except ValueError as e:
-            print(f"Invalid username: {e}, please try again!\n")
+            print_text(f"Invalid username: {e}, please try again!\n")
             continue
 
 
@@ -157,9 +186,9 @@ def user_location():
     This function asks users to input their
     town/city.
     """
-    print("(*) The name of City/Town must begin with a capital letter. \n")
-    print("You can always enter Q to quit/exit this process at any time. \n")
-    curr_location = str(input("What is the name of your City/Town? "))
+    print_text("(*) The name of City/Town must begin with a capital letter. \n")
+    print_text("You can always enter Q to quit/exit this process at any time. \n")
+    curr_location = str(type_input("What is the name of your City/Town? "))
     validate_location(curr_location)
 
 
@@ -171,21 +200,21 @@ def validate_location(cities):
     while True:
         try:
             if cities.lower() == "q":
-                print("GoodBye for now :) \n")
-                time.sleep(6)
+                print_text("GoodBye for now :) \n")
+                time.sleep(4)
                 clear_terminal()
                 return all_functions()
-            
+
             elif not cities[0].isupper():
                 raise ValueError("City/Town name must begin with a capital letter")
-                
+
             else:
-                print("\nCity/Town confirmed! \n")
+                print_text("\nCity/Town confirmed! \n")
                 final_order.append(cities)
                 break
-            
+
         except ValueError as e:
-            print(f"Invalid data entered: {e}, please try again")
+            print_text(f"Invalid data entered: {e}, please try again")
             return user_location()
 
 
@@ -196,34 +225,34 @@ def show_bmw():
     below. Once entered correctly, it
     displays a list of cars available.
     """
-    print("Please ask one of the following questions listed below. \n")
-    print("Each sentence must begin with a capital letter! \n")
-    print("Each sentence must end with question mark! \n")
-    print("Please ask the question beginning with a capital letter. \n")
-    print("(*). What cars are available in stores today? \n")
-    print("(*). Can you show me the list of cars in stores today? \n")
-    print("You can always enter Q to quit/exit this process at any time. \n")
+    print_text("Please ask one of the following questions listed below. \n")
+    print_text("Each sentence must begin with a capital letter! \n")
+    print_text("Each sentence must end with question mark! \n")
+    print_text("Please ask the question beginning with a capital letter. \n")
+    print_text("(*). What cars are available in stores today? \n")
+    print_text("(*). Can you show me the list of cars in stores today? \n")
+    print_text("You can always enter Q to quit/exit this process at any time. \n")
     while True:
         try:
-            user_question = str(input("Ask a question! "))
+            user_question = str(type_input("Ask a question! "))
             if user_question in list_of_questions:
-                print("\nHere is a list of the cars that are available. \n")
+                print_text("\nHere is a list of the cars that are available. \n")
                 for car in bmw_list:
                     print(f"{car} \n")
                 break
             elif user_question.lower() == 'q':
-                print("GoodBye for now :) \n")
-                time.sleep(6)
+                print_text("GoodBye for now :) \n")
+                time.sleep(4)
                 clear_terminal()
                 return all_functions()
-                
+
             else:
                 raise ValueError("Please ask one of the question listed below!")
         except ValueError as e:
-            print(f"Invalid data entered: {e}")
+            print_text(f"Invalid data entered: {e}")
             return show_bmw()
 
-               
+
 def choice_of_car():
     """
     This function asks users for their choice of car
@@ -234,36 +263,36 @@ def choice_of_car():
     """
     while True:
         try:
-            print("To choose one of the car from the list. Type 1,2 or 3!")
-            print("Or enter 4 to quit/exit this process at any time. \n")
-            pick_car = int(input("Which car are you interested in? "))
+            print_text("To choose one of the car from the list. Type 1,2 or 3!")
+            print_text("Or enter 4 to quit/exit this process at any time. \n")
+            pick_car = int(type_input("Which car are you interested in? "))
             final_choice.clear()
 
             if pick_car == 1:
                 final_choice.append(bmw_one)
-                print(f"\n{final_choice}")
+                print_text(f"\n{final_choice}")
                 return confirm_car_choice()
 
             elif pick_car == 2:
                 final_choice.append(bmw_two)
-                print(f"\n{final_choice}")
+                print_text(f"\n{final_choice}")
                 return confirm_car_choice()
 
             elif pick_car == 3:
                 final_choice.append(bmw_three)
-                print(f"\n{final_choice}")
+                print_text(f"\n{final_choice}")
                 return confirm_car_choice()
 
             elif pick_car == 4:
-                print("GoodBye for now :) \n")
-                time.sleep(6)
+                print_text("GoodBye for now :) \n")
+                time.sleep(4)
                 clear_terminal()
                 return all_functions()
 
             else:
                 raise ValueError("To choose one of the car from the list. Type 1, 2 or 3! \n")
         except ValueError as e:
-            print(f"Invalid data entered: {e}")
+            print_text(f"Invalid data entered: {e}")
             for car in bmw_list:
                 print(f"\n{car} \n")
             continue
@@ -276,9 +305,9 @@ def confirm_car_choice():
     have made or N to back to list of
     cars.
     """
-    print("\n Enter 'Y' if Yes and 'N' if No.")
-    print("You can always enter Q to quit/exit this process at any time. \n")
-    confirm_choice = str(input("Please can you confirm this is the correct car. ")).lower()
+    print_text("\n Enter 'Y' if Yes and 'N' if No.")
+    print_text("You can always enter Q to quit/exit this process at any time. \n")
+    confirm_choice = str(type_input("Please can you confirm this is the correct car. ")).lower()
     validate_car_choice(confirm_choice)
 
 
@@ -292,25 +321,25 @@ def validate_car_choice(data1):
     while True:
         try:
             if data1 == 'y':
-                print("Great Choice! \n")
+                print_text("Great Choice! \n")
                 break
-            
+
             elif data1 == 'n':
-                print('Not a problem \n')
+                print_text('Not a problem \n')
                 for car in bmw_list:
                     print(f"{car} \n")
                 return choice_of_car()
 
             elif data1 == 'q':
-                print("GoodBye for now :) \n")
-                time.sleep(6)
+                print_text("GoodBye for now :) \n")
+                time.sleep(4)
                 clear_terminal()
                 return all_functions()
             else:
                 raise ValueError()
 
         except ValueError:
-            print("Invalid data entered!")
+            print_text("Invalid data entered!")
             print(final_choice)
             return confirm_car_choice()
 
@@ -322,9 +351,9 @@ def show_features():
     have selected or N to go to the next
     step.
     """
-    print("Enter 'Y' if Yes and 'Q' if No.")
-    print("You can always enter Q to quit/exit this process at any time. \n")
-    car_features = str(input("Would you like a description of the car? ")).lower()
+    print_text("Enter 'Y' if Yes and 'Q' if No.")
+    print_text("You can always enter Q to quit/exit this process at any time. \n")
+    car_features = str(type_input("Would you like a description of the car? ")).lower()
     validate_show_features(car_features)
 
 
@@ -339,24 +368,24 @@ def validate_show_features(data2):
         try:
             if data2 == 'y':
                 if final_choice[0] == bmw_one or bmw_two or bmw_three:
-                    print(f"\nThis {final_choice[0]['Model']} {Descriptions}")
+                    print_text(f"\nThis {final_choice[0]['Model']} {Descriptions}")
                     break
-    
+
             elif data2 == 'n':
-                print("Not a problem \n")
+                print_text("Not a problem \n")
                 break
 
             elif data2 == 'q':
-                print("GoodBye for now :) \n")
+                print_text("GoodBye for now :) \n")
                 final_choice.clear()
-                time.sleep(6)
+                time.sleep(4)
                 clear_terminal()
                 return all_functions()    
 
             else:
                 raise ValueError()
         except ValueError:
-            print('Invalid data entered')
+            print_text('Invalid data entered')
             return show_features()
 
 
@@ -366,9 +395,9 @@ def make_order():
     to place an order on the car they have 
     chosen.
     """
-    print("\nEnter 'Y' if Yes and 'N' if No.")
-    print("You can always enter Q to quit/exit this process at any time. \n")
-    place_order = str(input("Would you like to complete the order? ")).upper()
+    print_text("\nEnter 'Y' if Yes and 'N' if No.")
+    print_text("You can always enter Q to quit/exit this process at any time. \n")
+    place_order = str(type_input("Would you like to complete the order? ")).upper()
     validate_order(place_order)
 
 
@@ -382,29 +411,29 @@ def validate_order(data3):
     while True:
         try:
             if data3 == 'Y':
-                print("Of course! \n")
-                print("Your order is being prepared for collection ... \n")
+                print_text("Of course! \n")
+                print_text("Your order is being prepared for collection ... \n")
                 break
-        
+
             elif data3 == 'N':
-                print('Thank you.')
-                print('GoodBye for now :)')
-                time.sleep(.5)
+                print_text('Thank you.')
+                print_text('GoodBye for now :)')
+                time.sleep(4)
                 clear_terminal()
                 return all_functions()
 
             elif data3 == 'Q':
-                print("GoodBye for now :) \n")
+                print_text("GoodBye for now :) \n")
                 final_choice.clear()
-                time.sleep(6)
+                time.sleep(4)
                 clear_terminal()
                 return all_functions()
-        
+
             else:
                 raise ValueError()
 
         except ValueError:
-            print("Invalid data entered, please try again.")
+            print_text("Invalid data entered, please try again.")
             return make_order()
 
 
@@ -417,11 +446,8 @@ def reference_num():
     """
     ref_num = random.randint(10000000, 99999999)
     final_order.append(ref_num)
-    print(f"Your reference number is {final_order[3]}.")
-    print(f"Make a note of your reference number to collect your car at the nearest BMW store in {final_order[2]}. \n")
-
-
-timer = time.sleep(31)
+    print_text(f"Your reference number is {final_order[3]}.")
+    print_text(f"Make a note of your reference number to collect your car at the nearest BMW store in {final_order[2]}. \n")
 
 
 def send_order():
@@ -434,11 +460,13 @@ def send_order():
     final_order.append(final_choice[0]['Model'])
     final_order.append(final_choice[0]['Colour'])
     final_order.append(final_choice[0]['FuelType'])
-    
+
     bmw_worksheet = SHEET.worksheet('Collections')
     bmw_worksheet.append_row(final_order)
-    print("Order Successful! \n")
-    print(f"This page will refresh in {timer}")
+    print_text("Order Successful! \n")
+    print_text("This page will refresh in 30 second! \n")
+    print_text("Please wait....")
+    time.sleep(30)
     clear_terminal()
     return all_functions()
 
