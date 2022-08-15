@@ -3,8 +3,12 @@ import random
 import os
 import time
 import sys
+import colorama
+from colorama import Back
 import gspread
 from google.oauth2.service_account import Credentials
+
+colorama.init(autoreset=True)
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -149,7 +153,7 @@ def create_user_name():
         print_text("Username should be 3 or more characters.\n")
         print_text("Username should only have letters and numbers. \n")
         print_text("You can always enter Q to quit/exit this process at any time. \n")
-
+        print('\n')
         try:
             final_order.clear()
             user_name = type_input("Enter a username you would like: ")
@@ -173,11 +177,12 @@ def create_user_name():
                 final_order.append(current_date)
                 final_order.append(user_name)
                 print_text("\n")
-                print_text(f"\nHello {user_name} and welcome to BMW click and collect.\n")
+                print_text(f"Hello {user_name} and welcome to BMW click and collect.\n")
+                print('\n')
                 break
 
         except ValueError as e:
-            print_text(f"Invalid username: {e}, please try again!\n")
+            print(f"{Back.RED}Invalid username: {e}, please try again!")
             continue
 
 
@@ -214,7 +219,7 @@ def validate_location(cities):
                 break
 
         except ValueError as e:
-            print_text(f"Invalid data entered: {e}, please try again")
+            print(f"{Back.RED}Invalid data entered: {e}, please try again!")
             return user_location()
 
 
