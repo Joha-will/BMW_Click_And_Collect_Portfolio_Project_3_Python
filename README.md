@@ -81,22 +81,35 @@ fill out the input fields with the information needed in the correct format. The
 - Colours
 - Username - Input fields 
 
-## Creating the Heroku app
+## **Technologies Used**
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+    - This was the main tool used to build this project.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### **Frameworks and Tools**
+- [patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=BMW%20CLICK%20AND%20COLLECT)
+    - This was used to create the logo for the application that is displayed to the users in the terminal.
+- [ASCII Art Generator](https://asciiart.club/)
+    - This was used to convert the image of a BMW car in text (ASCII art), which is displayed below the logo in the terminal.
+- [Colorama](https://pypi.org/project/colorama/)
+    - This was installed and imported to apply a red background to warning messages, when ever users enters invalid data into the input fields.
+- [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=55688909257&km_CPC_Keyword=lucidchart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433236001&km_CPC_TargetID=kwd-33511936169&km_CPC_Country=9045685&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=Cj0KCQjwgO2XBhCaARIsANrW2X3bXE7BqWPDkzDIXS4AFQGgJwkcG8yWrLUkoUtT7-FWVojw5AIchkEaArzYEALw_wcB)
+    - This was used in the planning phase of the project to create a web-base diagram, which explains how the application would work.
+- [Python Tutor](https://pythontutor.com/)
+    - This was used to help with the understanding of the python language, by visualizing code execution.
+- [Google Sheets](https://www.google.com/sheets/about/)
+    - This was used to store data sent from python via an application programming interface.
+- [PEP8 Python Validator](http://pep8online.com/)
+    - This was used to check the python code for any errors or warnings.
+- [Heroku](https://heroku.com/)
+    - This was used to deploy this application.
+- [Gitpod](https://gitpod.io/)
+    - This was the development environment used to build this project.
+- [Git](https://git-scm.com/)
+    - This is a version control system which I used to handle my project throughout the development stages, to save and push my work from gitpod to github.
+- [Github](http://github.com/)
+    - This was used to store my project after it was saved and pushed from gitpod.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+## **Testing**
+This project was testing manually by using the following methods:
+- The PEP8 python validator was used to test the python code for this project and there were no errors, warnings or potential problems within the project.
