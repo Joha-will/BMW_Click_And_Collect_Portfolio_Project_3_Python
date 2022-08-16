@@ -126,6 +126,7 @@ def initial_val():
 
             if initial_question == 'y':
                 print_text("\nPlease wait loading ...")
+                print("\n")
                 break
 
             else:
@@ -160,21 +161,20 @@ def create_user_name():
             user_name = input("Enter a username you would like:\n")
 
             if user_name.lower() == 'q':
-                print_text("GoodBye for now :) \n")
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
+                return quit_func()
+
             elif len(user_name) < 3:
                 raise ValueError("Username name should have 3 or more values!")
+
             elif not user_name[0].isupper():
                 raise ValueError("Username must begin with a Capital letter!")
+
             elif not user_name.isalnum():
                 raise ValueError("Username can only have letters and numbers!")
 
             else:
                 print_text("Username is valid! :)")
                 print_text("\n")
-                print_text("Now loading... \n")
                 final_order.append(current_date)
                 final_order.append(user_name)
                 print_text("\n")
@@ -189,9 +189,10 @@ def create_user_name():
 
 def user_age():
     """
-    This function asks user for their age. 
+    This function asks user for their age.
     """
     print_text("Please enter your age below.\n")
+    print_text("You can enter Q to quit/exit this process at any time. \n")
     print("\n")
     ask_for_age = input("How old are you? \n")
     validate_age(ask_for_age)
@@ -206,21 +207,21 @@ def validate_age(your_age):
     """
     while True:
         try:
-            if len(your_age) > 3:
-                raise ValueError("Age cannot have more than 3 characters!")
-            
+            if your_age.lower() == 'q':
+                return quit_func()
+
             elif not your_age.isdigit():
                 raise ValueError("Age must only be numbers!")
-            
-            elif your_age < 18:
-                print_text(f"Sorry {final_choice[0]} you are not old enough.")
-                print_text("GoodBye for now :) \n")
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
-            
+
+            if len(your_age) > 2:
+                raise ValueError("Age cannot be more than 2 numbers!")
+
+            elif int(your_age) < 17:
+                print_text(f"Sorry {final_order} you are not old enough.\n")
+                return quit_func()
+
             else:
-                print_text("Age confirmed!")
+                print_text("Age confirmed! \n")
                 break
         except ValueError as e:
             print(f"{Back.RED}{e}")
@@ -232,6 +233,7 @@ def user_location():
     This function asks users to input their
     town/city.
     """
+    print("\n")
     print_text("The name of City/Town must begin with a capital letter. \n")
     print_text("You can enter Q to quit/exit this process at any time. \n")
     print('\n')
@@ -247,10 +249,7 @@ def validate_location(cities):
     while True:
         try:
             if cities.lower() == "q":
-                print_text("GoodBye for now :) \n")
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
+                return quit_func()
 
             elif not cities[0].isupper():
                 raise ValueError("Town name must begin with a capital letter")
@@ -267,16 +266,15 @@ def validate_location(cities):
 
 def show_bmw():
     """
-    This function instructs the users
-    to enter one of the questions showed
-    below. Once entered correctly, it
-    displays a list of cars available.
+    This function instructs the users to enter one of the questions showed
+    below. Once entered correctly, it displays a list of cars available.
     """
-    print_text("Please ask one of the questions listed below marked (*). \n")
     print('\n')
+    print_text("Please ask one of the questions listed below marked (*). \n")
     print_text("Each sentence must begin with a capital letter! \n")
     print_text("Each sentence must end with question mark! \n")
     print_text("Please ask the question beginning with a capital letter. \n")
+    print('\n')
     print_text("(*). What cars are available in stores today? \n")
     print_text("(*). Can you show me the list of cars in stores today? \n")
     print_text("You can enter Q to quit/exit this process at any time. \n")
@@ -294,10 +292,7 @@ def show_bmw():
                     """)
                 break
             elif user_question.lower() == 'q':
-                print_text("GoodBye for now :) \n")
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
+                return quit_func()
 
             else:
                 raise ValueError("The questions are marked with (*)")
@@ -338,10 +333,7 @@ def choice_of_car():
                 return confirm_car_choice()
 
             elif pick_car == 4:
-                print_text("GoodBye for now :) \n")
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
+                return quit_func()
 
             else:
                 raise ValueError("Type 1, 2 or 3 to choose one of the car.\n")
@@ -389,10 +381,8 @@ def validate_car_choice(data1):
                 return choice_of_car()
 
             elif data1 == 'q':
-                print_text("GoodBye for now :) \n")
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
+                return quit_func()
+
             else:
                 raise ValueError()
 
@@ -437,11 +427,7 @@ def validate_show_features(data2):
                 break
 
             elif data2 == 'q':
-                print_text("GoodBye for now :) \n")
-                final_choice.clear()
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
+                return quit_func()
 
             else:
                 raise ValueError()
@@ -479,18 +465,10 @@ def validate_order(data3):
                 break
 
             elif data3 == 'N':
-                print_text('Thank you.\n')
-                print_text('GoodBye for now :)')
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
+                return quit_func()
 
             elif data3 == 'Q':
-                print_text("GoodBye for now :) \n")
-                final_choice.clear()
-                time.sleep(4)
-                clear_terminal()
-                return all_functions()
+                return quit_func()
 
             else:
                 raise ValueError()
@@ -538,6 +516,19 @@ def send_order():
     print('\n')
     print_text("Please wait....")
     time.sleep(30)
+    clear_terminal()
+    return all_functions()
+
+
+def quit_func():
+    """
+    This function is used to quit/exit the ordering process
+    when users use the quit option.
+    """
+    print("Thank you! \n")
+    print_text("GoodBye for now :) \n")
+    final_choice.clear()
+    time.sleep(4)
     clear_terminal()
     return all_functions()
 

@@ -112,4 +112,30 @@ fill out the input fields with the information needed in the correct format. The
 
 ## **Testing**
 This project was testing manually by using the following methods:
-- The PEP8 python validator was used to test the python code for this project and there were no errors, warnings or potential problems within the project.
+- The PEP8 python validator was used to test the python code for this project and there are no errors, warnings or potential problems within the project.
+- [PEP8 Python Validator Results]()
+
+- Tested all input fields by intentionally entering invalid data. For example:
+    - Entering integers where strings are required and vice versa.
+    - Entering special characters where only numbers and letters are required.
+    - Entering data that's not specific to inputs fields that requests specific data.
+    - Entering the same input numerous times.
+- Tested in my local terminal as well as the Heroko terminal.
+
+- I also asked three family members to use the app to see if they would encounter any errors which was really good for the testing.
+
+### **Bugs and Errors found**
+
+**Solved bugs**
+- Whilst testing this project for errors by intentionally entering invalid data into the input fields. I encounter a problem with the validate_order function. I deliberatly entered the
+  invalid data numerous times and the function was doing it's job by notifying the user with messages, that the data being entered was invalid which was good. But then I entered the
+  correct input which was being accepted but it kept repeating the invalid data message and wasn't running the next function. A link to the screenshot of the errors I encountered can be found below.
+  - [Validate_order function(Errors)]()
+
+    - However, this bug was found and rectifed. The reason I was having this problem was in the except ValueError statment. I called the make_order function without a (return, so the      function was not ending. A link to the screenshots of the validate_order function before and after the problem was rectified can be found below.
+    - [Validate_order function(Before)]()
+    - [Validate_order function(After)]()
+
+
+
+
