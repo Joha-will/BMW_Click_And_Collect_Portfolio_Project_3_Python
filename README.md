@@ -113,7 +113,7 @@ fill out the input fields with the information needed in the correct format. The
 ## **Testing**
 This project was testing manually by using the following methods:
 - The PEP8 python validator was used to test the python code for this project and there are no errors, warnings or potential problems within the project.
-- [PEP8 Python Validator Results]()
+    - [PEP8 Python Validator Results](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/Screenshot%202022-08-15%20at%2007.17.48.png)
 
 - Tested all input fields by intentionally entering invalid data. For example:
     - Entering integers where strings are required and vice versa.
@@ -122,19 +122,33 @@ This project was testing manually by using the following methods:
     - Entering the same input numerous times.
 - Tested in my local terminal as well as the Heroko terminal.
 
-- I also asked three family members to use the app to see if they would encounter any errors which was really good for the testing.
+- I asked three family members to use the app to monitior if they would encounter any errors which was good for the testing.
 
 ### **Bugs and Errors found**
 
 **Solved bugs**
-- Whilst testing this project for errors by intentionally entering invalid data into the input fields. I encounter a problem with the validate_order function. I deliberatly entered the
-  invalid data numerous times and the function was doing it's job by notifying the user with messages, that the data being entered was invalid which was good. But then I entered the
-  correct input which was being accepted but it kept repeating the invalid data message and wasn't running the next function. A link to the screenshot of the errors I encountered can be found below.
-  - [Validate_order function(Errors)]()
+- By entering invalid data into the input fields I was able to test this project for errors. I encountered a problem with the validate_order function. I entered the
+  invalid data several times and the function successfully notified the user with error messages, that the data being entered was invalid. I then entered the
+  correct data which was accepted however, it kept repeating the invalid data message and was not running the next function. A link to the screenshot of the errors I encountered can be found below.
+  - [Validate_order function(Errors)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/bugfound1.png)
 
-    - However, this bug was found and rectifed. The reason I was having this problem was in the except ValueError statment. I called the make_order function without a (return, so the      function was not ending. A link to the screenshots of the validate_order function before and after the problem was rectified can be found below.
-    - [Validate_order function(Before)]()
-    - [Validate_order function(After)]()
+    - However, this bug was successfully found and rectifed. The bug came from an error in the except ValueError statment because, I called the make_order function without a (return), so the function was not ending. A link to the screenshots of the validate_order function before and after the problem was rectified can be found below.
+    - [Validate_order function(Before)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/prefunction.png)
+    - [Validate_order function(After)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/postfunction.png)
+
+- I found a ValueError in the validate_age function. I encountered this problem by trying to enter letters into the input field of the user_age function, which only accepted numbers
+  and this lead the application to break. A link to the screenshot of the errors I encountered can be found below.
+  - [Validate_age function(Errors)]()
+
+    - However, this ValueError was successfully found and rectifed. The ValueError came from the user_age function. I implemented the (int()) function which took the input() function as a parameter, so this meant that the input function was only taking numbers as valid data. I rectified this by removing the (int()) function from the (input()) function and in the try except statments, I implemented the relavan code to check if the data being entered
+    into the input field was valid. A link to the screenshots of both user_age function and the validate_age function before and after the problem was rectified can be found below.
+    [User_age and Validate_age function(Before)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/prefunction.png)
+    - [User_age and Validate_age function(After)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/postfunction.png)
+
+
+
+** Remaining bugs**
+- No remaining bugs
 
 
 

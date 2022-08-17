@@ -217,7 +217,7 @@ def validate_age(your_age):
                 raise ValueError("Age cannot be more than 2 numbers!")
 
             elif int(your_age) < 17:
-                print_text(f"Sorry {final_order} you are not old enough.\n")
+                print_text(f"Sorry {final_order[1]} you are not old enough.\n")
                 return quit_func()
 
             else:
