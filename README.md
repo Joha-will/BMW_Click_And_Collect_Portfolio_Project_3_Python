@@ -125,6 +125,16 @@ fill out the input fields with the information needed in the correct format. The
     - This was used to convert the image of a BMW car in text (ASCII art), which is displayed below the logo in the terminal.
 - [Colorama](https://pypi.org/project/colorama/)
     - This was installed and imported to apply a red background to warning messages, when ever users enters invalid data into the input fields.
+- [Random Module]()
+    - This was imported for me to use the randint() method. The randint() method was used in the reference_num function to generate a random eight digit number and those numbers were used as the custom's order reference number.
+- [OS Module](https://docs.python.org/3/library/os.html)
+    - This was imported and used to clear the terminal so it would not get messy and overload.
+- [Sys Module](https://www.geeksforgeeks.org/python-sys-module/)
+    - This was imported and used to implement the typewriter effect.
+- [Datetime Module](https://www.programiz.com/python-programming/datetime/current-datetime)
+    - This was imported and used to record the current time and date users placed their orders.
+- [Time Module](https://www.programiz.com/python-programming/time/sleep)
+    - This was imported for me to use the sleep() function. The sleep() function was used to suspend execution of specific functions for a set amount of time, until I needed them to run.
 - [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=55688909257&km_CPC_Keyword=lucidchart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433236001&km_CPC_TargetID=kwd-33511936169&km_CPC_Country=9045685&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=Cj0KCQjwgO2XBhCaARIsANrW2X3bXE7BqWPDkzDIXS4AFQGgJwkcG8yWrLUkoUtT7-FWVojw5AIchkEaArzYEALw_wcB)
     - This was used in the planning phase of the project to create a web-base diagram, which explains how the application would work.
 - [Python Tutor](https://pythontutor.com/)
@@ -280,6 +290,7 @@ These online resources were really helpful when I needed to refamiliarize myself
 - [programiz](https://www.programiz.com/)
 - [PyPI](https://pypi.org/)
 - [Digital Ocean](https://www.digitalocean.com/)
+- [Geeksforgeeks](https://www.geeksforgeeks.org/)
 
 **Content**
 
