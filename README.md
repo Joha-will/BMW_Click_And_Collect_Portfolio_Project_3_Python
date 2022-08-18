@@ -125,7 +125,7 @@ fill out the input fields with the information needed in the correct format. The
     - This was used to convert the image of a BMW car in text (ASCII art), which is displayed below the logo in the terminal.
 - [Colorama](https://pypi.org/project/colorama/)
     - This was installed and imported to apply a red background to warning messages, when ever users enters invalid data into the input fields.
-- [Random Module]()
+- [Random Module](https://www.w3schools.com/python/module_random.asp)
     - This was imported for me to use the randint() method. The randint() method was used in the reference_num function to generate a random eight digit number and those numbers were used as the custom's order reference number.
 - [OS Module](https://docs.python.org/3/library/os.html)
     - This was imported and used to clear the terminal so it would not get messy and overload.
