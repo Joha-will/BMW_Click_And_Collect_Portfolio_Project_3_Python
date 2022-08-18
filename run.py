@@ -28,18 +28,17 @@ list_of_questions = [
     "Can you show me the list of cars in stores today?"
 ]
 bmw_list = [
-    {'Make': 'BMW', 'Model': '1 Series', 'Colour': 'Red', 'FuelType': 'Disel'},
-    {'Make': 'BMW', 'Model': 'M50', 'Colour': 'Blue', 'FuelType': 'Disel'},
-    {'Make': 'BMW', 'Model': 'M2 Comp', 'Colour': 'Grey', 'FuelType': 'Petrol'}
+    {'Make': 'BMW', 'Model': '1Series', 'Colour': 'Red', 'FuelType': 'Diesel'},
+    {'Make': 'BMW', 'Model': 'M50', 'Colour': 'Blue', 'Type': 'Electric'},
+    {'Make': 'BMW', 'Model': 'M2 Com', 'Colour': 'Grey', 'FuelType': 'Petrol'}
 ]
-
-DESCRIPTION = "is ultramodern luxury car with the latest features and "\
-    "technologies.\nOne of the things that make this car stand out is the "\
-    "attention to detail.\nThere is no doubt you will enjoy this car. "
-
 bmw_one = bmw_list[0]
 bmw_two = bmw_list[1]
 bmw_three = bmw_list[2]
+
+DESCRIPTION = "is ultramodern luxury car with the latest features and "\
+    "technologies.\nOne of the things that makes this car stand out is the "\
+    "attention to detail.\nThere is no doubt you will enjoy this car. "
 
 # code from programiz to set current date and time.
 time_date = datetime.now()
@@ -92,24 +91,32 @@ def welcome_logo():
     print("    ██║     ██║   ██║██║     ██║     ██╔══╝  ██║        ██║   ")
     print("    ╚██████╗╚██████╔╝███████╗███████╗███████╗╚██████╗   ██║   ")
     print("     ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝ ╚═════╝   ╚═╝   ")
-    print("                              ╓▄╗╗╗▀▀▀▀▀▀▀▀▀▀═──┬╤▄")
-    print("                          ▄██╜   ▄███████▀   ▌▓█  ╫██▄")
-    print("                      ╓▄██▀   ▄███████▀     ▐│█   ██ ╟▌▀▄")
-    print("                    ▄██▀   ╓███████▀     ▄███▐▌┌ ╠▀╫▐╚ ┌─█")
-    print("              ▄╗═▀╬└░░░╡░░░╠╙╙╙▀▀▀╙╙╙╙╜▀▀▀▀▀┌▐████▀▀╓═   ▐")
-    print("         ╓╗▀╙╙╔░         ╚┘       ╓╔┌─  ─     ╔ ╚▄─ ╓┌▒ ▓▐")
-    print("      ▄▀╙─ ░░         ╧     ╓┌╔░╛  ┌ ░╔░═  ─  ┌  ╔░╓╗╣╬╗█▐")
-    print("   ▄█               ╛  ╔┌░░░┴ ┌┌░░░ │┘╓╔─  ╓░╓╦░▄▒╬╬╝╬╟██▐")
-    print("  ╓█║  ╘  ░┬╚░░░░  ░┌░  ░░╔░▒│   ░╜░░  ╧┌▄▓▓▒╒█╬╬╝╙ ╬╠██▌")
-    print("  ▌ ╟████▄ ╣▀ ░░│  ░░ │░░─┬═▄▄▄╧╚╝▀██░╛╔██ █▌╟╬╜ ╓╩▄██▀")
-    print("  ▌░ └████▌█████████▓████▌█╦▄╔█▌█╓█▀─░║███▌ ▌╬▒╦╬███╙")
-    print("  ╙▒╕░┌┐╙▀▀╙████████▀░░░╙─═╩▀▀▀░░░░  ║████▌ █╬▄██▀")
-    print("   ▌▓╟▄    ░░╔╔╔╔┌ ░░░░░░░░╦░░░  │  ▐╫▌███▌ ███▀")
-    print("   █▒▌╚█████▄▄▄      ═──═══└░└╚ ╚▄  ╬█▌███ ╟█▀")
-    print("   ╙▀██▄╙╚╩╠████████▌╘▒▓████████▌╙▒╠╟████▀┌")
-    print("       ╙▀▀███▄╠╠╙╚╩╬▄┘╠╙╙╙▀▀▀▀▀▀▀░╠╬████▄═")
-    print("              ╙▀▀▀██████▄▄▄██████████▀▀└")
-    print("                        └╙╙╙╙╙╙╙")
+    time.sleep(2)
+    print("                      ,▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄╓")
+    print("                ,▄▄▄▄████████████████████████▄▄▄▄,")
+    print("              ,█████▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀███µ")
+    print("              ▄█▀                               ╙██")
+    print("             ██▀                                 └██")
+    print("           ╒██└                                    ██▄")
+    print("    ,╓▄▄▄▄,██`                                      ██▄▄▄▄▄▄,")
+    print(" ███████▌╓██¬                                        ██▄╙███████µ")
+    print("╙███████████▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄██▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄██████████▀")
+    print("     .▄█████████████████████████████████████████████████▄")
+    print('    ]████████████████████████████████████████████████████µ')
+    print('.  ▄██████████████████████████████████████████████████████▄')
+    print("╓████████████████████████████████████████████████████████████▄")
+    print("██▀¬  ─╙╙▀████████████████████████ ██████████████████▀▀╙└  `╙██")
+    print("██            └╙╙▀▀▀▀████████▀██▀████████╙▀▀▀▀╙┘`           ██⌐")
+    print('███µ             ,  └█████████║▌╫████████▌  ,             ,███µ')
+    print("██████████▄▄▄▄▄█████▄╙▀███████║▌███████▀▀▄██████▄▄▄▄██████████µ")
+    print("██████████████████████████████████████████████████████████████µ")
+    print("████─███▄▄██▀▀▀▀███████████████████████████████▀▀▀▀██▄▄███▐███⌐")
+    print("████µ█████████████▀██▀▄████████████████▄╙██▄▓█████████████║███⌐")
+    print("█████║███████████▀██╓████████████████████▄███╙███████████▌████⌐")
+    print("███████▄▄▄███▄▄████▌█▀▀▀▀▀██████████▀▀▀▀▀█▄█████▄▄███▄▄▄██████⌐")
+    print('██████████████████████████████████████████████████████████████⌐')
+    print('██████████▌`¬─└└└└└                        ─└└└└─¬`║██████████⌐')
+    print('\n')
 
 
 def initial_val():
@@ -173,7 +180,7 @@ def create_user_name():
                 raise ValueError("Username can only have letters and numbers!")
 
             else:
-                print_text("Username is valid! :)")
+                print_text("\nUsername is valid! :)")
                 print_text("\n")
                 final_order.append(current_date)
                 final_order.append(user_name)
@@ -221,7 +228,7 @@ def validate_age(your_age):
                 return quit_func()
 
             else:
-                print_text("Age confirmed! \n")
+                print_text("\nAge confirmed! \n")
                 break
         except ValueError as e:
             print(f"{Back.RED}{e}")
@@ -312,7 +319,7 @@ def choice_of_car():
     while True:
         try:
             print_text("Type 1,2 or 3 to choose one of the car.\n")
-            print_text("Or Enter 4 to quit/exit this process at any time. \n")
+            print_text("Or Enter 6 to quit/exit this process at any time. \n")
             print('\n')
             pick_car = int(input("Which car are you interested in?\n"))
             final_choice.clear()
@@ -508,9 +515,10 @@ def send_order():
 
     bmw_worksheet = SHEET.worksheet('Collections')
     bmw_worksheet.append_row(final_order)
+    print('\n')
     print_text("Order Successful! \n")
     print('\n')
-    print_text("This page will refresh in 30 seconds! \n")
+    print_text("This window will refresh in 30 seconds! \n")
     print('\n')
     print_text("Thank for ordering with BMW click and collect.\n")
     print('\n')
@@ -527,6 +535,7 @@ def quit_func():
     """
     print("Thank you! \n")
     print_text("GoodBye for now :) \n")
+    print_text("Restarting ....")
     final_choice.clear()
     time.sleep(4)
     clear_terminal()

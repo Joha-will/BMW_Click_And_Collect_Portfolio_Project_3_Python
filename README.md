@@ -36,7 +36,15 @@ Thank you for viewing my project.
 
 I hope you find the application useful!
 
+## **Technical Design**
 
+**Flow Chart**
+The aim of this flow chart which was created in the planning phase was to help with the development of the project. It assistted me several times with working out the logics and how each function would work when the application is being used.
+
+## **How to use**
+This BMW click and collect app, is used for making car orders and getting them prepared for collection at your nearest
+store in your current town or city. To use this app, you need to follow the instructions on the screen and
+fill out the input fields with the information needed in the correct format. The app will provide the list of cars available for you to choose from as well as, alerting you with messages if you enter invalid data in the input fields. Once you are happy with your choice of car and you have successfully completed your order. The app provides a detailed message on what you need to do for the collection process.
 
 ## **User Experience**
 
@@ -51,8 +59,6 @@ I hope you find the application useful!
 - This application is targeted to people who are time restricted. 
 
 - This application is targeted to the citizens of the United Kingdom. 
-
-
 
 ### **User Stories**
 - As a user of the app, I want to have clear instructions on how to use the app.
@@ -69,12 +75,6 @@ I hope you find the application useful!
 - As the site owner I would like an applcation to be able to perform the click and collect process successfully with little or no employee input to allow employees to focus on larger scaled jobs. 
 
 
-### **How to use**
-This BMW click and collect app, is used for making car orders and getting them prepared for collection at your nearest
-store in your current town or city. To use this app, you need to follow the instructions on the screen and
-fill out the input fields with the information needed in the correct format. The app will provide the list of cars available for you to choose from as well as, alerting you with messages if you enter invalid data in the input fields. Once you are happy with your choice of car and you have successfully completed your order. The app provides a detailed message on what you need to do for the collection process.
-
-
 ## **Features**
 - This BMW click and collect application has a title in font design 'ANSI shadow' and BMW car logo.
 - Type writer
@@ -87,7 +87,7 @@ fill out the input fields with the information needed in the correct format. The
     - This was the main tool used to build this project.
 
 ### **Frameworks and Tools**
-- [patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=BMW%20CLICK%20AND%20COLLECT)
+- [Patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=BMW%20CLICK%20AND%20COLLECT)
     - This was used to create the logo for the application that is displayed to the users in the terminal.
 - [ASCII Art Generator](https://asciiart.club/)
     - This was used to convert the image of a BMW car in text (ASCII art), which is displayed below the logo in the terminal.
@@ -237,11 +237,6 @@ I wanted to learn how to implement colour and a typeWriter effect into my projec
 - [www.101computing.net](https://www.101computing.net/python-typing-text-effect/)
 - [Tech With Tim](https://www.youtube.com/watch?v=u51Zjlnui4Y&ab_channel=TechWithTim)
 
-**Content**
-
-- [BMW](https://www.bmw.co.uk/en/index.html)
-    - Content was used from the offical BMW website.
-
 These online resources were really helpful when I needed to refamiliarize myself with a specific topic or syntax. They were really education as well.
 
 - [Code Institute](https://codeinstitute.net/)
@@ -250,6 +245,11 @@ These online resources were really helpful when I needed to refamiliarize myself
 - [PyPI](https://pypi.org/)
 - [Digital Ocean](https://www.digitalocean.com/)
 
+**Content**
+
+- [BMW](https://www.bmw.co.uk/en/index.html)
+    - Content was used from the offical BMW website.
+
 
 ### Acknowledgments
 
@@ -257,11 +257,11 @@ These online resources were really helpful when I needed to refamiliarize myself
 - Code Institute - I want to say thank you to Code Institute for the support and resources they have provided which facilitated me throughtout the development of this project.
 - CI Slack Community - I want to say thank you to the Code Institute Slack community which had alot of supportive content about the modules and coding challenges.
 
-I want to say thank you to my family and friend who have supported and help me throughout the development of this project.
+I want to say thank you to my family and friend who have supported and helped me throughout the development of this project.
 
 Finally, thank you for viewing this project and I hope you like it!
 
-
+---
 
 
 
