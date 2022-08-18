@@ -11,17 +11,39 @@
 
 
 
-
-
+- Live links to the project, Github and Heroku.
+    - [https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-)
+    - [https://bmw-click-and-collect.herokuapp.com/](https://bmw-click-and-collect.herokuapp.com/)
+---
 ## **Table of Contents**
-
-
-
-
-
-
-
-
+- [Introduction]()
+- [Technical Design]()
+    - Flow Chart
+- [How to use]()
+- [User Experience (UX)]()
+    - Target Audience
+    - User Stories
+    - Site owner goals
+- [Features]()
+- [Technologies Used]()
+    - Frameworks and Tools
+- [Testing]()
+    - Bugs and Errors found
+    - Solved Bugs
+    - Remaining Bugs
+    - Validator Testing
+- [Deployment]()
+    - Using GitHub and GitPod
+    - Forking the GitHub Repository
+    - Deployment to Heroku
+    - Creating a Heroku account
+    - Configuring settings Heroku
+    - Deploy section
+- [Credits]()
+    - Code
+    - Content
+    - Acknowledgments
+---
 
 ## **Introduction**
 Welcome to my third project, which is a command-line user interface application built mainly using python.
@@ -31,26 +53,34 @@ together and make it work. This idea also came from the love and interest I have
 the planning phase of my third project I was unsure of what I was going to build which made very challenging as well as being a novice using python. However, I stayed motivated and focused and created this project which I learned a lot from and it has helped me to gain more experience and skills with the python language. 
 
 In this README I will detail the steps I took to develop and create this project, with the use of  screen photos, images, links, charts and more.
+This project is for education purposes only, this is not a product of BMW.
 
 Thank you for viewing my project.
 
 I hope you find the application useful!
 
+---
+
 ## **Technical Design**
 
-**Flow Chart**
+**Flow Chart**  
+
 The aim of this flow chart which was created in the planning phase was to help with the development of the project. It assistted me several times with working out the logics and how each function would work when the application is being used.
+
+---
 
 ## **How to use**
 This BMW click and collect app, is used for making car orders and getting them prepared for collection at your nearest
 store in your current town or city. To use this app, you need to follow the instructions on the screen and
 fill out the input fields with the information needed in the correct format. The app will provide the list of cars available for you to choose from as well as, alerting you with messages if you enter invalid data in the input fields. Once you are happy with your choice of car and you have successfully completed your order. The app provides a detailed message on what you need to do for the collection process.
 
-## **User Experience**
+---
+
+## **User Experience (UX)**
 
 
 ### **Target Audience**
-- This application is targeted to people above the age of 17 and older which is the legal age in the United Kingdom. 
+- This application is targeted to people age 17 or older which is the legal age in the United Kingdom. 
 
 - This application is not gender specific. 
 
@@ -74,21 +104,24 @@ fill out the input fields with the information needed in the correct format. The
 - As the site owner I would like an application to provide clear instructions for making an easy ordering process for the users. 
 - As the site owner I would like an applcation to be able to perform the click and collect process successfully with little or no employee input to allow employees to focus on larger scaled jobs. 
 
+---
 
 ## **Features**
 - This BMW click and collect application has a title in font design 'ANSI shadow' which was created using [Patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=BMW%20CLICK%20AND%20COLLECT) and a BMW car logo which was created using [ASCII Art Generator](https://asciiart.club/). A link to the screenshot of the logo can be found below.
     - [Logo Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/bmwlogo.png)
-- This BMW click and collect application has functions that gives users warning message when they have entered invalid data. The messages is displayed with a red background which make the warning more visiable. This background effect was implemented using [Colorama](https://pypi.org/project/colorama/). A link to the screenshot of the background colour effect can be found below.
+- This BMW click and collect application has functions that gives users warning messages when they have entered invalid data. The messages is displayed with a red background which make the warning more visiable. This background effect was implemented using [Colorama](https://pypi.org/project/colorama/). A link to the screenshot of the background colour effect can be found below.
     - [Background Colour Effect](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/bugfound1.png)
 - This BMW click and collect application sends the users completed orders to the company's googlesheet via an API which is saved and used for the preparation of customers orders. A link to the screenshot of the company's googlesheet can be found below.
     - [Googlesheet Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/googlesheet.png)
-- This BMW click and collect application has a Typewriter effect which gives the makes the app more captivating and user friendly.
+- This BMW click and collect application has a Typewriter effect which makes the app more captivating and user friendly.
 - This BMW click and collect application has a list of cars that is shown to the users upon request. A link to the screenshot of the car list can be found below.
     - [Car list Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/cartable.png)
-- This BMW click and collect application supplies reference number and more information about the car collection once they have completed their order. A link to the screenshot of the information can be found below.
+- This BMW click and collect application supplies a reference number and more information about the car collection once they have completed their order. A link to the screenshot of the information can be found below.
     - [Information Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/referencenumber.png)
 - This BMW click and collect application provides users with the option of getting a description of the car. A link to the screenshot of the description can be found below.
-    - [Description Screenshot]()
+    - [Description Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/descriptionshot.png)
+
+---
 
 ## **Technologies Used**
 
@@ -119,8 +152,10 @@ fill out the input fields with the information needed in the correct format. The
 - [Github](http://github.com/)
     - This was used to store my project after it was saved and pushed from gitpod.
 
+---
+
 ## **Testing**
-This project was testing manually by using the following methods:
+This project was tested manually by using the following methods:
 - The PEP8 python validator was used to test the python code for this project and there are no errors, warnings or potential problems within the project.
     - [PEP8 Python Validator Results](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/Screenshot%202022-08-15%20at%2007.17.48.png)
 
@@ -149,8 +184,7 @@ This project was testing manually by using the following methods:
   and this lead the application to break. A link to the screenshot of the errors I encountered can be found below.
   - [Validate_age function(Errors)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/valueerror.png)
 
-    1. However, this ValueError was successfully found and rectifed. The ValueError came from the user_age function. I implemented the (int()) function which took the input() function as a parameter, so this meant that the input function was only taking numbers as valid data. I rectified this by removing the (int()) function from the (input()) function and I implemented different methods and functions to the try except  statments to check if the data being entered by users met the age requirements.
-    into the input field was valid. A link to the screenshots of both user_age function and the validate_age function before and after the problem was rectified, can be found below.
+    1. However, this ValueError was successfully found and rectifed. The ValueError came from the user_age function. I implemented the (int()) function which took the input() function as a argument, so this meant that the input function was only taking numbers as valid data. I rectified this by removing the (int()) function from the (input()) function and I implemented different methods and functions to the try except  statments to check if the data being entered by users met the age requirements. A link to the screenshots of both user_age function and the validate_age function before and after the problem was rectified, can be found below.
     - [User_age and Validate_age function(Before)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/ageerror1.png)
     - [User_age and Validate_age function(After)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/ageerror2.png)
 
@@ -164,24 +198,26 @@ This project was testing manually by using the following methods:
         2. too many blank lines
         3. trailing whitespace
     - However, I rectified these by performing the following:
-        1. To rectify the line too long error, I had to  user multiline comments and compress the project's code so that it did not exceed the allowed characters per line.
+        1. To rectify the line too long error, I had to  use multiline comments and compress the project's code so that it did not exceed the allowed characters per line.
         2. To rectify the too many blank lines error, I thouroughly went through the project's code and deleted any unnecessary the blank lines.
         3. To rectify the trailing whitespace error, I thouroughly went through the project's code and removed the  trailing whitespaces. 
     -  A link to the screenshot of the errors I encountered can be found below.
         - [PEP8 Validator Errors](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/pep8results.png)
 
+---
+
 ## **Deployment**
 
 ### **Using GitHub and GitPod**
 The main branch of this repository has been used for the deployed version of this application.
-As instructed by Code Institute, I used the Python Essentials Template that was provide.
+As instructed by Code Institute, I used the Python Essentials Template that was provided.
 - [Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template)
 
 The following steps were used to create a repository, setup a workspace and use Github and Gipod.
 - Click the Use this Template button.
 - Give your repository a name, and description is you wish.
 - Click the Create repository from template button to create your repository.
-- Click the Gitpod button to create a Gitpod workspace, this would might take a few minutes.
+- Click the Gitpod button to create a Gitpod workspace, this could take a few minutes.
 - When working on the project using Gitpod, it is best to open the workspace from Gitpod as this will open your previous workspace instead of creating a new one.
     - You can commit your work using the following commands:
         1. git add . - adds all updated files to a staging area.
@@ -229,7 +265,7 @@ The list of dependencies goes into the requirements.txt file by using the follow
 **Deploy section**
 - On the same horizontal nav bar, click the Deploy button.
 - Scroll to Deloyment methods and click the GitHub button.
-- Go to Connent GitHub and search for your repository name in the search bar.
+- Go to Connect GitHub and search for your repository name in the search bar.
 - Then click the Search button.
 - When the repository pop's up below the search bar click the Connect button.
 - Scroll down to Automatic and Manual deploys
@@ -237,12 +273,13 @@ The list of dependencies goes into the requirements.txt file by using the follow
   you push work to the GitHub repository.
 - Click on the View button to view app and test to see if it works when the app is successfully deployed.
 
+---
 
 ## **Credits**
 
 **Code**
 
-I wanted to learn how to implement colour and a typeWriter effect into my project as it was being developed. I carried out some research and found this website which helped me to achieve this typeWrite effect. I also found a youtube video that demonstrated how to implement colour into my project. Code was used from the the website and the video. A link to the website and the video can be found below. 
+I wanted to learn how to implement colours and a typeWriter effect into my project as it was being developed. I carried out some research and found this website which helped me to achieve this typeWrite effect. I also found a youtube video that demonstrated how to implement colours into my project. Code was used from the the website and the video. A link to the website and the video can be found below. Code was used from [programiz](https://www.programiz.com/) to set current time and date.
 - [www.101computing.net](https://www.101computing.net/python-typing-text-effect/)
 - [Tech With Tim](https://www.youtube.com/watch?v=u51Zjlnui4Y&ab_channel=TechWithTim)
 
@@ -257,7 +294,7 @@ These online resources were really helpful when I needed to refamiliarize myself
 **Content**
 
 - [BMW](https://www.bmw.co.uk/en/index.html)
-    - Content was used from the offical BMW website.
+    - Content was used from the offical BMW website to provide some of the car names.
 
 
 ### Acknowledgments

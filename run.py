@@ -8,6 +8,7 @@ from colorama import Back
 import gspread
 from google.oauth2.service_account import Credentials
 
+# This code was from Youtube, Tech with Tim who showed how to use colorama.
 colorama.init(autoreset=True)
 
 SCOPE = [
