@@ -1,45 +1,34 @@
 # **BMW Click and Collect** 
-
-
-
-
-
-
-
-
-
-
-
-
+![headimg](https://user-images.githubusercontent.com/98041941/185298467-6c1f21c8-86a8-4763-9eaf-26f5ed0fa02c.png)
 - Live links to the project, Github and Heroku.
     - [https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-)
     - [https://bmw-click-and-collect.herokuapp.com/](https://bmw-click-and-collect.herokuapp.com/)
 ---
 ## **Table of Contents**
-- [Introduction]()
-- [Technical Design]()
+- [Introduction](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#introduction)
+- [Technical Design](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#technical-design)
     - Flow Chart
-- [How to use]()
-- [User Experience (UX)]()
+- [How to use](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#how-to-use)
+- [User Experience (UX)](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#user-experience-ux)
     - Target Audience
     - User Stories
     - Site owner goals
-- [Features]()
-- [Technologies Used]()
+- [Features](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#features)
+- [Technologies Used](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#technologies-used)
     - Frameworks and Tools
-- [Testing]()
+- [Testing](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#testing)
     - Bugs and Errors found
     - Solved Bugs
     - Remaining Bugs
     - Validator Testing
-- [Deployment]()
+- [Deployment](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#deployment)
     - Using GitHub and GitPod
     - Forking the GitHub Repository
     - Deployment to Heroku
     - Creating a Heroku account
     - Configuring settings Heroku
     - Deploy section
-- [Credits]()
+- [Credits](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-#credits)
     - Code
     - Content
     - Acknowledgments
@@ -66,6 +55,7 @@ I hope you find the application useful!
 **Flow Chart**  
 
 The aim of this flow chart which was created in the planning phase was to help with the development of the project. It assistted me several times with working out the logics and how each function would work when the application is being used.
+![BMW_Click_and_collect (1)](https://user-images.githubusercontent.com/98041941/185299225-574d508a-b8b1-45c7-87f1-9804a2c645d9.jpeg)
 
 ---
 
