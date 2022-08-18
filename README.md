@@ -76,10 +76,19 @@ fill out the input fields with the information needed in the correct format. The
 
 
 ## **Features**
-- This BMW click and collect application has a title in font design 'ANSI shadow' and BMW car logo.
-- Type writer
-- Colours
-- Username - Input fields 
+- This BMW click and collect application has a title in font design 'ANSI shadow' which was created using [Patorjk](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=BMW%20CLICK%20AND%20COLLECT) and a BMW car logo which was created using [ASCII Art Generator](https://asciiart.club/). A link to the screenshot of the logo can be found below.
+    - [Logo Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/bmwlogo.png)
+- This BMW click and collect application has functions that gives users warning message when they have entered invalid data. The messages is displayed with a red background which make the warning more visiable. This background effect was implemented using [Colorama](https://pypi.org/project/colorama/). A link to the screenshot of the background colour effect can be found below.
+    - [Background Colour Effect](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/bugfound1.png)
+- This BMW click and collect application sends the users completed orders to the company's googlesheet via an API which is saved and used for the preparation of customers orders. A link to the screenshot of the company's googlesheet can be found below.
+    - [Googlesheet Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/googlesheet.png)
+- This BMW click and collect application has a Typewriter effect which gives the makes the app more captivating and user friendly.
+- This BMW click and collect application has a list of cars that is shown to the users upon request. A link to the screenshot of the car list can be found below.
+    - [Car list Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/cartable.png)
+- This BMW click and collect application supplies reference number and more information about the car collection once they have completed their order. A link to the screenshot of the information can be found below.
+    - [Information Screenshot](https://github.com/Joha-will/Portfolio-Project-3-Python-Essentials-/blob/main/assets/images/referencenumber.png)
+- This BMW click and collect application provides users with the option of getting a description of the car. A link to the screenshot of the description can be found below.
+    - [Description Screenshot]()
 
 ## **Technologies Used**
 
