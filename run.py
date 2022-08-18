@@ -30,7 +30,7 @@ list_of_questions = [
 ]
 bmw_list = [
     {'Make': 'BMW', 'Model': '1Series', 'Colour': 'Red', 'FuelType': 'Diesel'},
-    {'Make': 'BMW', 'Model': 'M50', 'Colour': 'Blue', 'Type': 'Electric'},
+    {'Make': 'BMW', 'Model': 'M50', 'Colour': 'Blue', 'FuelType': 'Electric'},
     {'Make': 'BMW', 'Model': 'M2 Com', 'Colour': 'Grey', 'FuelType': 'Petrol'}
 ]
 bmw_one = bmw_list[0]
@@ -141,7 +141,8 @@ def initial_val():
                 raise ValueError()
 
         except ValueError:
-            print_text("Invalid data entered, please try again! \n")
+            print(f"{Back.RED}Invalid data entered, please try again! \n")
+            time.sleep(2)
             clear_terminal()
             return all_functions()
 
@@ -320,7 +321,7 @@ def choice_of_car():
     while True:
         try:
             print_text("Type 1,2 or 3 to choose one of the car.\n")
-            print_text("Or Enter 6 to quit/exit this process at any time. \n")
+            print_text("Or Enter 4 to quit/exit this process at any time. \n")
             print('\n')
             pick_car = int(input("Which car are you interested in?\n"))
             final_choice.clear()
